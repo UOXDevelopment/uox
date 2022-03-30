@@ -10,7 +10,6 @@
 #include <thread>
 #include <algorithm>
 
-#include "serverlocation.hpp"
 
 
 using namespace std::string_literals ;

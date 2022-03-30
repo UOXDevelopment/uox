@@ -14,7 +14,7 @@ using namespace std::string_literals;
  *******************************************************/
 //=========================================================
 const std::map<servmod_t,std::string> servmod_names{
-	{servmod_t::server,"server"s},{servmod_t::user,"user"s}
+	{servmod_t::data,"data"s},{servmod_t::user,"user"s}
 };
 //=========================================================
 auto nameForServMod(servmod_t modifier) -> const std::string& {
@@ -29,4 +29,36 @@ auto servmodForName(const std::string &name) ->servmod_t {
 		return iter->first ;
 	}
 	throw std::out_of_range(name +" is not a valid servmod_t type"s);
+}
+//=========================================================
+auto servmodNames() ->const std::map<servmod_t,std::string>& {
+	return servmod_names;
+}
+
+//=========================================================
+/* ******************************************************
+ serverloc_t
+ *******************************************************/
+//=========================================================
+const std::map<serverloc_t,std::string> serverloc_names{
+	{serverloc_t::configuration,"configuration"s},{serverloc_t::language,"language"s},
+	{serverloc_t::language,"language"s},{serverloc_t::script,"script"s},
+};
+//=========================================================
+auto nameForServerLoc(serverloc_t modifier) -> const std::string& {
+	return serverloc_names.at(modifier);
+}
+//=========================================================
+auto serverlocForName(const std::string &name) ->serverloc_t {
+	auto iter = std::find_if(serverloc_names.begin(),serverloc_names.end(),[&name](const std::pair<serverloc_t,std::string> &entry){
+		return entry.second == name ;
+	});
+	if (iter != serverloc_names.end()){
+		return iter->first ;
+	}
+	throw std::out_of_range(name +" is not a valid serverloc_t type"s);
+}
+//=========================================================
+auto serverlocNames() ->const std::map<serverloc_t,std::string>& {
+	return serverloc_names;
 }
