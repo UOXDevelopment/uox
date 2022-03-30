@@ -23,7 +23,7 @@
 		6444455227F4D58500E89EAC /* EventTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6444454427F4D58500E89EAC /* EventTimer.cpp */; };
 		6444455327F4D58500E89EAC /* keyvalue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6444454527F4D58500E89EAC /* keyvalue.cpp */; };
 		6444455627F4D5AC00E89EAC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6444455527F4D5A200E89EAC /* libz.tbd */; };
-		6444455927F4D5ED00E89EAC /* system.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6444455727F4D5ED00E89EAC /* system.cpp */; };
+		6444455927F4D5ED00E89EAC /* system_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6444455727F4D5ED00E89EAC /* system_types.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,8 +71,8 @@
 		6444454427F4D58500E89EAC /* EventTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventTimer.cpp; sourceTree = "<group>"; };
 		6444454527F4D58500E89EAC /* keyvalue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = keyvalue.cpp; sourceTree = "<group>"; };
 		6444455527F4D5A200E89EAC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		6444455727F4D5ED00E89EAC /* system.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system.cpp; sourceTree = "<group>"; };
-		6444455827F4D5ED00E89EAC /* system.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = system.hpp; sourceTree = "<group>"; };
+		6444455727F4D5ED00E89EAC /* system_types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system_types.cpp; sourceTree = "<group>"; };
+		6444455827F4D5ED00E89EAC /* system_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = system_types.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +121,8 @@
 		6444452127F4D52C00E89EAC /* types */ = {
 			isa = PBXGroup;
 			children = (
-				6444455727F4D5ED00E89EAC /* system.cpp */,
-				6444455827F4D5ED00E89EAC /* system.hpp */,
+				6444455727F4D5ED00E89EAC /* system_types.cpp */,
+				6444455827F4D5ED00E89EAC /* system_types.hpp */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 				6444454F27F4D58500E89EAC /* mapip.cpp in Sources */,
 				6444454A27F4D58500E89EAC /* section.cpp in Sources */,
 				6444454627F4D58500E89EAC /* secparser.cpp in Sources */,
-				6444455927F4D5ED00E89EAC /* system.cpp in Sources */,
+				6444455927F4D5ED00E89EAC /* system_types.cpp in Sources */,
 				6444454C27F4D58500E89EAC /* secgroup.cpp in Sources */,
 				6444454E27F4D58500E89EAC /* socket.cpp in Sources */,
 				6444452827F4D52C00E89EAC /* main.cpp in Sources */,

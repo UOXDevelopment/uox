@@ -1,7 +1,7 @@
 //Copyright © 2022 Charles Kerr. All rights reserved.
 
-#ifndef system_hpp
-#define system_hpp
+#ifndef system_types_hpp
+#define system_types_hpp
 
 #include <cstdint>
 #include <string>
@@ -53,4 +53,4 @@ auto userlocForName(const std::string &name) ->userloc_t ;
 auto userlocNames() ->const std::map<userloc_t,std::string>& ;
 
 
-#endif /* system_hpp */
+#endif /* system_types_hpp */
