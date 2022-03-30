@@ -1,7 +1,7 @@
 //Copyright © 2022 Charles Kerr. All rights reserved.
 
-#ifndef general_hpp
-#define general_hpp
+#ifndef system_hpp
+#define system_hpp
 
 #include <cstdint>
 #include <string>
@@ -17,4 +17,4 @@ enum class servmod_t {
 auto nameForServMod(servmod_t modifier) -> const std::string& ;
 auto servmodForName(const std::string &name) ->servmod_t ;
 auto servmodNames() ->const std::map<servmod_t,std::string>& ;
-#endif /* general_hpp */
+#endif /* system_hpp */
