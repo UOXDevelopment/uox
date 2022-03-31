@@ -8,18 +8,25 @@
 #include <filesystem>
 
 #include "uomap.hpp"
-#include "langmsg.hpp"
-#include "secgroup.hpp"
+
+class secgroup_t ;
+class langmsg ;
+struct factory_t ;
+
 //=========================================================
 struct world_t {
 	int number ;
-	uomap map ;
-	tileinfo *info ;
+	uomap ultimamap ;
 	std::filesystem::path uodir ;
 	langmsg *language ;
 	secgroup_t *definitions ;
 	secgroup_t *configuration ;
-	
+	factory_t *factory ;
+	tileinfo *info ;
+
 	world_t(int mapnum=-1) ;
+	auto set(int mapnum,const std::filesystem::path &uodir,langmsg *language,secgroup_t *definitions, secgroup_t *configuration, factory_t *factory,tileinfo *info) ->void ;
+	auto set(const std::filesystem::path &uodir,langmsg *language,secgroup_t *definitions, secgroup_t *configuration, factory_t *factory,tileinfo *info) ->void ;
+	auto load() ->bool ;
 };
 #endif /* world_hpp */

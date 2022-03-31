@@ -13,8 +13,8 @@
 #include "serverlocation.hpp"
 #include "secgroup.hpp"
 #include "tileinfo.hpp"
-#include "uomulti.hpp"
 #include "langmsg.hpp"
+#include "universe.hpp"
 
 using namespace std::string_literals ;
 int main(int argc, const char * argv[]) {
@@ -104,11 +104,9 @@ int main(int argc, const char * argv[]) {
 			std::cout << "Loading Ultima tile information." << std::endl;
 			auto tiledata = tileinfo() ;
 			if (tiledata.load(location.ultima)){
-				auto multicollection = uomulti() ;
-				std::cout <<"Loading multi data"<<std::endl;
-				if (multicollection.load(location.ultima, &tiledata)){
-					// Ok, multis are loaded!
-					std::cout <<"Loaded " << multicollection.size() << " multis." << std::endl;
+				universe_t universe ;
+				universe.set(&location, &languages, &definition, &configuration, &tiledata);
+				if (universe.load()) {
 					
 				}
 			}

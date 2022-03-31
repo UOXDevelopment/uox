@@ -37,6 +37,8 @@
 		64B714E127F5F6C2004F1042 /* serial_generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714DF27F5F6C2004F1042 /* serial_generator.cpp */; };
 		64B714E427F5F725004F1042 /* object_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714E227F5F725004F1042 /* object_types.cpp */; };
 		64B714EA27F5FC16004F1042 /* ultima_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714E827F5FC15004F1042 /* ultima_types.cpp */; };
+		64B714ED27F61762004F1042 /* universe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714EB27F61762004F1042 /* universe.cpp */; };
+		64B714F027F63CAD004F1042 /* baseobj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714EE27F63CAD004F1042 /* baseobj.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,6 +114,10 @@
 		64B714E327F5F725004F1042 /* object_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = object_types.hpp; sourceTree = "<group>"; };
 		64B714E827F5FC15004F1042 /* ultima_types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ultima_types.cpp; sourceTree = "<group>"; };
 		64B714E927F5FC15004F1042 /* ultima_types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ultima_types.hpp; sourceTree = "<group>"; };
+		64B714EB27F61762004F1042 /* universe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = universe.cpp; sourceTree = "<group>"; };
+		64B714EC27F61762004F1042 /* universe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = universe.hpp; sourceTree = "<group>"; };
+		64B714EE27F63CAD004F1042 /* baseobj.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = baseobj.cpp; sourceTree = "<group>"; };
+		64B714EF27F63CAD004F1042 /* baseobj.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseobj.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,8 @@
 				64B714CE27F5B8DD004F1042 /* langmsg.hpp */,
 				64B714D027F5F2E1004F1042 /* world.cpp */,
 				64B714D127F5F2E1004F1042 /* world.hpp */,
+				64B714EB27F61762004F1042 /* universe.cpp */,
+				64B714EC27F61762004F1042 /* universe.hpp */,
 			);
 			path = system;
 			sourceTree = "<group>";
@@ -216,6 +224,8 @@
 				64B714DD27F5F695004F1042 /* factory.hpp */,
 				64B714DF27F5F6C2004F1042 /* serial_generator.cpp */,
 				64B714E027F5F6C2004F1042 /* serial_generator.hpp */,
+				64B714EE27F63CAD004F1042 /* baseobj.cpp */,
+				64B714EF27F63CAD004F1042 /* baseobj.hpp */,
 			);
 			path = clientobjects;
 			sourceTree = "<group>";
@@ -330,6 +340,7 @@
 				64B714D227F5F2E1004F1042 /* world.cpp in Sources */,
 				64B714C327F5491D004F1042 /* tileinfo.cpp in Sources */,
 				64B714DA27F5F54E004F1042 /* artblock.cpp in Sources */,
+				64B714ED27F61762004F1042 /* universe.cpp in Sources */,
 				6444454927F4D58500E89EAC /* netexcept.cpp in Sources */,
 				6444455327F4D58500E89EAC /* keyvalue.cpp in Sources */,
 				64B714EA27F5FC16004F1042 /* ultima_types.cpp in Sources */,
@@ -347,6 +358,7 @@
 				64B714C927F54ED2004F1042 /* uomulti.cpp in Sources */,
 				64B714E127F5F6C2004F1042 /* serial_generator.cpp in Sources */,
 				6444452827F4D52C00E89EAC /* main.cpp in Sources */,
+				64B714F027F63CAD004F1042 /* baseobj.cpp in Sources */,
 				64B714DE27F5F695004F1042 /* factory.cpp in Sources */,
 				6444454B27F4D58500E89EAC /* strutil.cpp in Sources */,
 				6444454D27F4D58500E89EAC /* ip4list.cpp in Sources */,
