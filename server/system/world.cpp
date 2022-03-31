@@ -6,5 +6,5 @@
 
 //=========================================================
 world_t::world_t(int mapnum) {
-	number = map
+	number = mapnum ;
 }
