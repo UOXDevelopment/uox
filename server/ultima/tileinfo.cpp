@@ -2,6 +2,7 @@
 
 #include "tileinfo.hpp"
 #include "strutil.hpp"
+
 #include <iostream>
 #include <algorithm>
 
@@ -10,19 +11,19 @@ using namespace std::string_literals;
 // info_t items
 //=========================================================
 const std::map<std::string, std::uint64_t> info_t::_flag_names={
-	{"background"s,UO::background},{"holdable"s,UO::holdable},{"transparent"s,UO::transparent},
-	{"translucent"s,UO::translucent},{"wall"s,UO::translucent},{"damaging"s,UO::damaging},
-	{"impassable"s,UO::impassable},{"wet"s,UO::wet},{"unknownbit9"s,UO::unknownBit9},
-	{"surface"s,UO::surface},{"climbable"s,UO::climable},{"stackable"s,UO::stackable},
-	{"window"s,UO::window},{"noShoot"s,UO::noShoot},{"articleA"s,UO::articleA},
-	{"articleAn"s,UO::articleAn},{"articleThe"s,UO::articleThe},{"foliage"s,UO::foliage},
-	{"partialHue"s,UO::partialHue},{"noHouse"s,UO::noHouse},{"map"s,UO::map},
-	{"container"s,UO::container},{"wearable"s,UO::wearable},{"lightSource"s,UO::lightSource},
-	{"animated"s,UO::animated},{"hoverOver"s,UO::hoverOver},{"noDiagnol"s,UO::noDiagnol},
-	{"armor"s,UO::armor},{"roof"s,UO::roof},{"door"s,UO::door},
-	{"stairBack"s,UO::stairBack},{"stairRight"s,UO::stairRight},{"alphaBlend"s,UO::alphaBlend},
-	{"useNewArt"s,UO::useNewArt},{"artUsed"s,UO::artUsed},{"noShadow"s,UO::noShadow},
-	{"pixelBleed"s,UO::pixelBleed},{"animatedOnce"s,UO::animatedOnce},{"multiMove"s,UO::multiMove}
+	{"background"s,ultima::background},{"holdable"s,ultima::holdable},{"transparent"s,ultima::transparent},
+	{"translucent"s,ultima::translucent},{"wall"s,ultima::translucent},{"damaging"s,ultima::damaging},
+	{"impassable"s,ultima::impassable},{"wet"s,ultima::wet},{"unknownbit9"s,ultima::unknownBit9},
+	{"surface"s,ultima::surface},{"climbable"s,ultima::climable},{"stackable"s,ultima::stackable},
+	{"window"s,ultima::window},{"noShoot"s,ultima::noShoot},{"articleA"s,ultima::articleA},
+	{"articleAn"s,ultima::articleAn},{"articleThe"s,ultima::articleThe},{"foliage"s,ultima::foliage},
+	{"partialHue"s,ultima::partialHue},{"noHouse"s,ultima::noHouse},{"map"s,ultima::map},
+	{"container"s,ultima::container},{"wearable"s,ultima::wearable},{"lightSource"s,ultima::lightSource},
+	{"animated"s,ultima::animated},{"hoverOver"s,ultima::hoverOver},{"noDiagnol"s,ultima::noDiagnol},
+	{"armor"s,ultima::armor},{"roof"s,ultima::roof},{"door"s,ultima::door},
+	{"stairBack"s,ultima::stairBack},{"stairRight"s,ultima::stairRight},{"alphaBlend"s,ultima::alphaBlend},
+	{"useNewArt"s,ultima::useNewArt},{"artUsed"s,ultima::artUsed},{"noShadow"s,ultima::noShadow},
+	{"pixelBleed"s,ultima::pixelBleed},{"animatedOnce"s,ultima::animatedOnce},{"multiMove"s,ultima::multiMove}
 };
 //=========================================================
 auto info_t::setFlag(const std::string &flagname,bool value) ->void{

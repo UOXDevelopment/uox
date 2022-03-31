@@ -25,7 +25,18 @@
 		6444455627F4D5AC00E89EAC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6444455527F4D5A200E89EAC /* libz.tbd */; };
 		6444455927F4D5ED00E89EAC /* system_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6444455727F4D5ED00E89EAC /* system_types.cpp */; };
 		649A9BC827F4EDB40088A8E4 /* serverlocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 649A9BC627F4EDB40088A8E4 /* serverlocation.cpp */; };
-		64B714C327F5491D004F1042 /* tileInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714C227F5491D004F1042 /* tileInfo.cpp */; };
+		64B714C327F5491D004F1042 /* tileinfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714C227F5491D004F1042 /* tileinfo.cpp */; };
+		64B714C627F54CC2004F1042 /* uopfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714C527F54CC2004F1042 /* uopfile.cpp */; };
+		64B714C927F54ED2004F1042 /* uomulti.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714C827F54ED2004F1042 /* uomulti.cpp */; };
+		64B714CF27F5B8DD004F1042 /* langmsg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714CD27F5B8DD004F1042 /* langmsg.cpp */; };
+		64B714D227F5F2E1004F1042 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714D027F5F2E1004F1042 /* world.cpp */; };
+		64B714D927F5F54E004F1042 /* terrainblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714D327F5F54E004F1042 /* terrainblock.cpp */; };
+		64B714DA27F5F54E004F1042 /* artblock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714D527F5F54E004F1042 /* artblock.cpp */; };
+		64B714DB27F5F54E004F1042 /* uomap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714D827F5F54E004F1042 /* uomap.cpp */; };
+		64B714DE27F5F695004F1042 /* factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714DC27F5F695004F1042 /* factory.cpp */; };
+		64B714E127F5F6C2004F1042 /* serial_generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714DF27F5F6C2004F1042 /* serial_generator.cpp */; };
+		64B714E427F5F725004F1042 /* object_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714E227F5F725004F1042 /* object_types.cpp */; };
+		64B714E727F5F871004F1042 /* ultima_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714E527F5F871004F1042 /* ultima_types.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,8 +88,30 @@
 		6444455827F4D5ED00E89EAC /* system_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = system_types.hpp; sourceTree = "<group>"; };
 		649A9BC627F4EDB40088A8E4 /* serverlocation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = serverlocation.cpp; sourceTree = "<group>"; };
 		649A9BC727F4EDB40088A8E4 /* serverlocation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = serverlocation.hpp; sourceTree = "<group>"; };
-		64B714C127F5491D004F1042 /* tileInfo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tileInfo.hpp; sourceTree = "<group>"; };
-		64B714C227F5491D004F1042 /* tileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tileInfo.cpp; sourceTree = "<group>"; };
+		64B714C127F5491D004F1042 /* tileinfo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tileinfo.hpp; sourceTree = "<group>"; };
+		64B714C227F5491D004F1042 /* tileinfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tileinfo.cpp; sourceTree = "<group>"; };
+		64B714C427F54CC2004F1042 /* uopfile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = uopfile.hpp; sourceTree = "<group>"; };
+		64B714C527F54CC2004F1042 /* uopfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uopfile.cpp; sourceTree = "<group>"; };
+		64B714C727F54ED2004F1042 /* uomulti.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = uomulti.hpp; sourceTree = "<group>"; };
+		64B714C827F54ED2004F1042 /* uomulti.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uomulti.cpp; sourceTree = "<group>"; };
+		64B714CD27F5B8DD004F1042 /* langmsg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = langmsg.cpp; sourceTree = "<group>"; };
+		64B714CE27F5B8DD004F1042 /* langmsg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = langmsg.hpp; sourceTree = "<group>"; };
+		64B714D027F5F2E1004F1042 /* world.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = world.cpp; sourceTree = "<group>"; };
+		64B714D127F5F2E1004F1042 /* world.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = world.hpp; sourceTree = "<group>"; };
+		64B714D327F5F54E004F1042 /* terrainblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = terrainblock.cpp; sourceTree = "<group>"; };
+		64B714D427F5F54E004F1042 /* artblock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = artblock.hpp; sourceTree = "<group>"; };
+		64B714D527F5F54E004F1042 /* artblock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = artblock.cpp; sourceTree = "<group>"; };
+		64B714D627F5F54E004F1042 /* uomap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = uomap.hpp; sourceTree = "<group>"; };
+		64B714D727F5F54E004F1042 /* terrainblock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = terrainblock.hpp; sourceTree = "<group>"; };
+		64B714D827F5F54E004F1042 /* uomap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uomap.cpp; sourceTree = "<group>"; };
+		64B714DC27F5F695004F1042 /* factory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = factory.cpp; sourceTree = "<group>"; };
+		64B714DD27F5F695004F1042 /* factory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = factory.hpp; sourceTree = "<group>"; };
+		64B714DF27F5F6C2004F1042 /* serial_generator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = serial_generator.cpp; sourceTree = "<group>"; };
+		64B714E027F5F6C2004F1042 /* serial_generator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = serial_generator.hpp; sourceTree = "<group>"; };
+		64B714E227F5F725004F1042 /* object_types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = object_types.cpp; sourceTree = "<group>"; };
+		64B714E327F5F725004F1042 /* object_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = object_types.hpp; sourceTree = "<group>"; };
+		64B714E527F5F871004F1042 /* ultima_types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ultima_types.cpp; sourceTree = "<group>"; };
+		64B714E627F5F871004F1042 /* ultima_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ultima_types.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +162,8 @@
 			children = (
 				6444455727F4D5ED00E89EAC /* system_types.cpp */,
 				6444455827F4D5ED00E89EAC /* system_types.hpp */,
+				64B714E227F5F725004F1042 /* object_types.cpp */,
+				64B714E327F5F725004F1042 /* object_types.hpp */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -145,6 +180,10 @@
 			children = (
 				649A9BC627F4EDB40088A8E4 /* serverlocation.cpp */,
 				649A9BC727F4EDB40088A8E4 /* serverlocation.hpp */,
+				64B714CD27F5B8DD004F1042 /* langmsg.cpp */,
+				64B714CE27F5B8DD004F1042 /* langmsg.hpp */,
+				64B714D027F5F2E1004F1042 /* world.cpp */,
+				64B714D127F5F2E1004F1042 /* world.hpp */,
 			);
 			path = system;
 			sourceTree = "<group>";
@@ -152,8 +191,20 @@
 		6444452427F4D52C00E89EAC /* ultima */ = {
 			isa = PBXGroup;
 			children = (
-				64B714C227F5491D004F1042 /* tileInfo.cpp */,
-				64B714C127F5491D004F1042 /* tileInfo.hpp */,
+				64B714D527F5F54E004F1042 /* artblock.cpp */,
+				64B714D427F5F54E004F1042 /* artblock.hpp */,
+				64B714D327F5F54E004F1042 /* terrainblock.cpp */,
+				64B714D727F5F54E004F1042 /* terrainblock.hpp */,
+				64B714D827F5F54E004F1042 /* uomap.cpp */,
+				64B714D627F5F54E004F1042 /* uomap.hpp */,
+				64B714C827F54ED2004F1042 /* uomulti.cpp */,
+				64B714C727F54ED2004F1042 /* uomulti.hpp */,
+				64B714C527F54CC2004F1042 /* uopfile.cpp */,
+				64B714C427F54CC2004F1042 /* uopfile.hpp */,
+				64B714C227F5491D004F1042 /* tileinfo.cpp */,
+				64B714C127F5491D004F1042 /* tileinfo.hpp */,
+				64B714E527F5F871004F1042 /* ultima_types.cpp */,
+				64B714E627F5F871004F1042 /* ultima_types.hpp */,
 			);
 			path = ultima;
 			sourceTree = "<group>";
@@ -161,6 +212,10 @@
 		6444452527F4D52C00E89EAC /* clientobjects */ = {
 			isa = PBXGroup;
 			children = (
+				64B714DC27F5F695004F1042 /* factory.cpp */,
+				64B714DD27F5F695004F1042 /* factory.hpp */,
+				64B714DF27F5F6C2004F1042 /* serial_generator.cpp */,
+				64B714E027F5F6C2004F1042 /* serial_generator.hpp */,
 			);
 			path = clientobjects;
 			sourceTree = "<group>";
@@ -267,21 +322,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B714CF27F5B8DD004F1042 /* langmsg.cpp in Sources */,
+				64B714D927F5F54E004F1042 /* terrainblock.cpp in Sources */,
 				6444455227F4D58500E89EAC /* EventTimer.cpp in Sources */,
 				6444454727F4D58500E89EAC /* ip4addr.cpp in Sources */,
 				6444454827F4D58500E89EAC /* bytebuffer.cpp in Sources */,
-				64B714C327F5491D004F1042 /* tileInfo.cpp in Sources */,
+				64B714D227F5F2E1004F1042 /* world.cpp in Sources */,
+				64B714C327F5491D004F1042 /* tileinfo.cpp in Sources */,
+				64B714DA27F5F54E004F1042 /* artblock.cpp in Sources */,
 				6444454927F4D58500E89EAC /* netexcept.cpp in Sources */,
 				6444455327F4D58500E89EAC /* keyvalue.cpp in Sources */,
+				64B714E727F5F871004F1042 /* ultima_types.cpp in Sources */,
+				64B714C627F54CC2004F1042 /* uopfile.cpp in Sources */,
 				6444455027F4D58500E89EAC /* netsupport.cpp in Sources */,
+				64B714E427F5F725004F1042 /* object_types.cpp in Sources */,
 				6444455127F4D58500E89EAC /* header.cpp in Sources */,
 				6444454F27F4D58500E89EAC /* mapip.cpp in Sources */,
 				6444454A27F4D58500E89EAC /* section.cpp in Sources */,
 				6444454627F4D58500E89EAC /* secparser.cpp in Sources */,
 				6444455927F4D5ED00E89EAC /* system_types.cpp in Sources */,
+				64B714DB27F5F54E004F1042 /* uomap.cpp in Sources */,
 				6444454C27F4D58500E89EAC /* secgroup.cpp in Sources */,
 				6444454E27F4D58500E89EAC /* socket.cpp in Sources */,
+				64B714C927F54ED2004F1042 /* uomulti.cpp in Sources */,
+				64B714E127F5F6C2004F1042 /* serial_generator.cpp in Sources */,
 				6444452827F4D52C00E89EAC /* main.cpp in Sources */,
+				64B714DE27F5F695004F1042 /* factory.cpp in Sources */,
 				6444454B27F4D58500E89EAC /* strutil.cpp in Sources */,
 				6444454D27F4D58500E89EAC /* ip4list.cpp in Sources */,
 				649A9BC827F4EDB40088A8E4 /* serverlocation.cpp in Sources */,
@@ -346,14 +412,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					server,
-					server/types,
-					server/system,
-					iserver/o,
-					server/utility,
-					server/ultima,
-				);
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -405,14 +464,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					server,
-					server/types,
-					server/system,
-					iserver/o,
-					server/utility,
-					server/ultima,
-				);
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

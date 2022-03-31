@@ -13,6 +13,8 @@
 #include "serverlocation.hpp"
 #include "secgroup.hpp"
 #include "tileinfo.hpp"
+#include "uomulti.hpp"
+#include "langmsg.hpp"
 
 using namespace std::string_literals ;
 int main(int argc, const char * argv[]) {
@@ -32,6 +34,11 @@ int main(int argc, const char * argv[]) {
 
 		secgroup_t definition = secgroup_t(location.serverdata[serverloc_t::configuration].string(),true,".cfg") ;
 		definition.load(location.userdata[userloc_t::definition].string(),true,".cfg");
+	
+		std::cout <<"Loading language data." << std::endl;
+		
+
+
 		// We now have the configuration/definition data
 		std::cout <<"Normalizing configuration data."<< std::endl;
 		// we now need to normalize it
@@ -78,13 +85,38 @@ int main(int argc, const char * argv[]) {
 				}
 			}
 		}
-		
-		std::cout << "Loading Ultima tile information." << std::endl;
-		auto tiledata = tileinfo() ;
-		if (tiledata.load(location.ultima)){
-			
-		}
+		// Before we go any further, get the server configuration, we need some information
+		auto servercfg = configuration.section("", "server");
+		if ( servercfg){
+			auto deflang = language_t::english ;
+			try {
+				deflang =languageForName(servercfg->last("language")->value());
+			}
+			catch(...){
+				// Do nothing, just continue on, language entry in server section not found or invalid
+				std::cerr <<"Server language not found/invalid, defaulting to english." << std::endl;
+			}
+			std::cout <<"Loading languages."<<std::endl;
+			auto languages = langmsg(deflang) ;
+			languages.load(location.serverdata[serverloc_t::language].string(),true,".lang") ;
+			languages.load(location.userdata[userloc_t::language].string(),true,".lang") ;
+			std::cout <<"Loaded " << languages.size() << " languages." << std::endl;
+			std::cout << "Loading Ultima tile information." << std::endl;
+			auto tiledata = tileinfo() ;
+			if (tiledata.load(location.ultima)){
+				auto multicollection = uomulti() ;
+				std::cout <<"Loading multi data"<<std::endl;
+				if (multicollection.load(location.ultima, &tiledata)){
+					// Ok, multis are loaded!
+					std::cout <<"Loaded " << multicollection.size() << " multis." << std::endl;
+					
+				}
+			}
 
+		}
+		else {
+			std::cerr <<"Can not find server configuration."<<std::endl;
+		}
 	}
 	
 	
