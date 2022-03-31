@@ -13,7 +13,7 @@
  *******************************************************/
 //=========================================================
 enum class servmod_t {
-	data,user
+	data,user,ultima
 };
 //=========================================================
 auto nameForServMod(servmod_t modifier) -> const std::string& ;
@@ -31,7 +31,7 @@ enum class serverloc_t {
 	configuration,definition,language,script
 };
 //=========================================================
-auto nameForServerLoc(serverloc_t modifier) -> const std::string& ;
+auto nameForServerLoc(serverloc_t type) -> const std::string& ;
 //=========================================================
 auto serverlocForName(const std::string &name) ->serverloc_t ;
 //=========================================================
@@ -43,10 +43,10 @@ auto serverlocNames() ->const std::map<serverloc_t,std::string>& ;
  *******************************************************/
 //=========================================================
 enum class userloc_t {
-	configuration,definition,language,script
+	configuration,definition,language,script,log,msgboard,world,book,access,scriptdata
 };
 //=========================================================
-auto nameForUserLoc(userloc_t modifier) -> const std::string& ;
+auto nameForUserLoc(userloc_t type) -> const std::string& ;
 //=========================================================
 auto userlocForName(const std::string &name) ->userloc_t ;
 //=========================================================

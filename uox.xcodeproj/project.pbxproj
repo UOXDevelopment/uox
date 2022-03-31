@@ -24,6 +24,8 @@
 		6444455327F4D58500E89EAC /* keyvalue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6444454527F4D58500E89EAC /* keyvalue.cpp */; };
 		6444455627F4D5AC00E89EAC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6444455527F4D5A200E89EAC /* libz.tbd */; };
 		6444455927F4D5ED00E89EAC /* system_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6444455727F4D5ED00E89EAC /* system_types.cpp */; };
+		649A9BC827F4EDB40088A8E4 /* serverlocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 649A9BC627F4EDB40088A8E4 /* serverlocation.cpp */; };
+		64B714C327F5491D004F1042 /* tileInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714C227F5491D004F1042 /* tileInfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +75,10 @@
 		6444455527F4D5A200E89EAC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6444455727F4D5ED00E89EAC /* system_types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = system_types.cpp; sourceTree = "<group>"; };
 		6444455827F4D5ED00E89EAC /* system_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = system_types.hpp; sourceTree = "<group>"; };
+		649A9BC627F4EDB40088A8E4 /* serverlocation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = serverlocation.cpp; sourceTree = "<group>"; };
+		649A9BC727F4EDB40088A8E4 /* serverlocation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = serverlocation.hpp; sourceTree = "<group>"; };
+		64B714C127F5491D004F1042 /* tileInfo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tileInfo.hpp; sourceTree = "<group>"; };
+		64B714C227F5491D004F1042 /* tileInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tileInfo.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,8 @@
 		6444452327F4D52C00E89EAC /* system */ = {
 			isa = PBXGroup;
 			children = (
+				649A9BC627F4EDB40088A8E4 /* serverlocation.cpp */,
+				649A9BC727F4EDB40088A8E4 /* serverlocation.hpp */,
 			);
 			path = system;
 			sourceTree = "<group>";
@@ -144,6 +152,8 @@
 		6444452427F4D52C00E89EAC /* ultima */ = {
 			isa = PBXGroup;
 			children = (
+				64B714C227F5491D004F1042 /* tileInfo.cpp */,
+				64B714C127F5491D004F1042 /* tileInfo.hpp */,
 			);
 			path = ultima;
 			sourceTree = "<group>";
@@ -260,6 +270,7 @@
 				6444455227F4D58500E89EAC /* EventTimer.cpp in Sources */,
 				6444454727F4D58500E89EAC /* ip4addr.cpp in Sources */,
 				6444454827F4D58500E89EAC /* bytebuffer.cpp in Sources */,
+				64B714C327F5491D004F1042 /* tileInfo.cpp in Sources */,
 				6444454927F4D58500E89EAC /* netexcept.cpp in Sources */,
 				6444455327F4D58500E89EAC /* keyvalue.cpp in Sources */,
 				6444455027F4D58500E89EAC /* netsupport.cpp in Sources */,
@@ -273,6 +284,7 @@
 				6444452827F4D52C00E89EAC /* main.cpp in Sources */,
 				6444454B27F4D58500E89EAC /* strutil.cpp in Sources */,
 				6444454D27F4D58500E89EAC /* ip4list.cpp in Sources */,
+				649A9BC827F4EDB40088A8E4 /* serverlocation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
