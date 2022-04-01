@@ -39,6 +39,7 @@
 		64B714EA27F5FC16004F1042 /* ultima_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714E827F5FC15004F1042 /* ultima_types.cpp */; };
 		64B714ED27F61762004F1042 /* universe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714EB27F61762004F1042 /* universe.cpp */; };
 		64B714F027F63CAD004F1042 /* baseobj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714EE27F63CAD004F1042 /* baseobj.cpp */; };
+		64B714F327F64AC0004F1042 /* position_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714F127F64AC0004F1042 /* position_types.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +119,8 @@
 		64B714EC27F61762004F1042 /* universe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = universe.hpp; sourceTree = "<group>"; };
 		64B714EE27F63CAD004F1042 /* baseobj.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = baseobj.cpp; sourceTree = "<group>"; };
 		64B714EF27F63CAD004F1042 /* baseobj.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseobj.hpp; sourceTree = "<group>"; };
+		64B714F127F64AC0004F1042 /* position_types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = position_types.cpp; sourceTree = "<group>"; };
+		64B714F227F64AC0004F1042 /* position_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = position_types.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				6444455827F4D5ED00E89EAC /* system_types.hpp */,
 				64B714E227F5F725004F1042 /* object_types.cpp */,
 				64B714E327F5F725004F1042 /* object_types.hpp */,
+				64B714F127F64AC0004F1042 /* position_types.cpp */,
+				64B714F227F64AC0004F1042 /* position_types.hpp */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				6444454927F4D58500E89EAC /* netexcept.cpp in Sources */,
 				6444455327F4D58500E89EAC /* keyvalue.cpp in Sources */,
 				64B714EA27F5FC16004F1042 /* ultima_types.cpp in Sources */,
+				64B714F327F64AC0004F1042 /* position_types.cpp in Sources */,
 				64B714C627F54CC2004F1042 /* uopfile.cpp in Sources */,
 				6444455027F4D58500E89EAC /* netsupport.cpp in Sources */,
 				64B714E427F5F725004F1042 /* object_types.cpp in Sources */,
