@@ -7,7 +7,9 @@
 #include <memory>
 #include <unordered_map>
 
+#include "object_types.hpp"
 #include "serial_generator.hpp"
+#include "baseobj.hpp"
 class tileinfo ;
 class uomulti ;
 class secgroup_t ;
@@ -35,6 +37,9 @@ class langmsg;
 
 //=========================================================
 struct factory_t {
+	std::unordered_map<serial_t, baseobj_t*> mobiles ;
+	std::unordered_map<serial_t, baseobj_t*> items ;
+
 	
 	serial_generator generator ;
 	tileinfo *info ;
@@ -47,6 +52,10 @@ struct factory_t {
 	factory_t(const factory_t&) = delete ;
 	auto operator=(const factory_t&) ->factory_t& = delete ;
 	factory_t()  ;
+	~factory_t();
 	auto set(tileinfo *info,uomulti *multi,secgroup_t *definitions, secgroup_t *configuration, langmsg *languages)->void ;
+	auto create(objecttype_t type) ->baseobj_t* ;
+	auto create(objecttype_t type, serial_t serial) ->baseobj_t* ;
+	auto erase(serial_t serial) ->void ;
 };
 #endif /* factory_hpp */

@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "object_types.hpp"
+#include "position_types.hpp"
 #include "section.hpp"
 
 class factory_t ;
@@ -19,6 +20,7 @@ protected:
 public:
 	objecttype_t type  ;
 	serial_t serial ;
+	location_t location ;
 	
 	baseobj_t() ;
 	virtual ~baseobj_t() = default ;

@@ -9,6 +9,15 @@
 #include "tileinfo.hpp"
 #include "uomulti.hpp"
 //=========================================================
+factory_t::~factory_t(){
+	for (auto &entry : items){
+		delete entry.second;
+	}
+	for (auto &entry : mobiles){
+		delete entry.second;
+	}
+}
+//=========================================================
 factory_t::factory_t() {
 	info =nullptr;
 	multicollection =nullptr;

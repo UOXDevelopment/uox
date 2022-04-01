@@ -22,7 +22,7 @@ auto baseobj_t::save(std::ostream &output) ->void {
 }
 //=========================================================
 auto baseobj_t::saveContents(std::ostream &output) ->void {
-	
+	output <<"\tlocation = " << location.value()<<"\n";
 }
 //=========================================================
 auto baseobj_t::loadWorldSection(section_t &section, factory_t *factory) ->bool {
@@ -34,7 +34,10 @@ auto baseobj_t::loadWorldSection(section_t &section, factory_t *factory) ->bool 
 //=========================================================
 auto baseobj_t::processWorldKey(keyvalue_t &keyvalue,factory_t *factory) ->bool {
 	auto rvalue = false ;
-	
+	if (keyvalue.key() == "location"){
+		rvalue = true ;
+		location = location_t(keyvalue.value());
+	}
 	return rvalue;
 }
 

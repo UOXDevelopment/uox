@@ -17,6 +17,10 @@
 #include "universe.hpp"
 
 using namespace std::string_literals ;
+
+auto loadData(serverlocation &location, secgroup_t &configuration, secgroup_t &definition) ->bool ;
+
+
 int main(int argc, const char * argv[]) {
 	auto config_file  = "uox.cfg"s;
 	auto retstatus = EXIT_FAILURE ;
@@ -24,67 +28,12 @@ int main(int argc, const char * argv[]) {
 		config_file = argv[1] ;
 	}
 	auto location = serverlocation() ;
-	if (location.load(config_file)) {
-		std::cout <<"Loading configuration data."<< std::endl;
-		// Now load the configuration data
-		secgroup_t configuration = secgroup_t(location.serverdata[serverloc_t::configuration].string(),true,".cfg") ;
-		configuration.load(location.userdata[userloc_t::configuration].string(),true,".cfg");
-
-		std::cout <<"Loading definition data."<< std::endl;
-
-		secgroup_t definition = secgroup_t(location.serverdata[serverloc_t::configuration].string(),true,".cfg") ;
-		definition.load(location.userdata[userloc_t::definition].string(),true,".cfg");
+	auto configuration = secgroup_t() ;
+	auto definition = secgroup_t() ;
+	auto langauges = langmsg() ;
 	
-		std::cout <<"Loading language data." << std::endl;
-		
-
-
-		// We now have the configuration/definition data
-		std::cout <<"Normalizing configuration data."<< std::endl;
-		// we now need to normalize it
-		auto normalize = configuration.section("normalize", "config") ;
-		if (normalize != nullptr){
-			for (auto &entry : normalize->entries()){
-				if (entry.key()=="type"){
-					configuration.normalize(entry.value());
-				}
-			}
-		}
-		std::cout <<"Normalizing definition data."<< std::endl;
-		normalize = definition.section("normalize", "config") ;
-		if (normalize != nullptr){
-			for (auto &entry : normalize->entries()){
-				if (entry.key()=="type"){
-					definition.normalize(entry.value());
-				}
-			}
-		}
-
-		std::cout <<"Removing requested configuration sections."<< std::endl;
-		// we need to remove sections
-		auto removal = configuration.type("remove") ;
-		if (removal != nullptr){
-			for (auto &sectype : *removal){
-				auto type = sectype.second.header().identifier() ;
-				for (auto &entry : sectype.second.entries()) {
-					if (entry.key() == "id"){
-						configuration.remove(type, entry.value());
-					}
-				}
-			}
-		}
-		std::cout <<"Removing requested definition sections."<< std::endl;
-		removal = definition.type("remove") ;
-		if (removal != nullptr){
-			for (auto &sectype : *removal){
-				auto type = sectype.second.header().identifier() ;
-				for (auto &entry : sectype.second.entries()) {
-					if (entry.key() == "id"){
-						definition.remove(type, entry.value());
-					}
-				}
-			}
-		}
+	if (location.load(config_file)) {
+		loadData(location,configuration, definition);
 		// Before we go any further, get the server configuration, we need some information
 		auto servercfg = configuration.section("", "server");
 		if ( servercfg){
@@ -119,4 +68,70 @@ int main(int argc, const char * argv[]) {
 	
 	
 	return retstatus;
+}
+
+//===========================================================================================
+auto loadData(serverlocation &location,secgroup_t &configuration, secgroup_t &definition) ->bool {
+	std::cout <<"Loading configuration data."<< std::endl;
+	// Now load the configuration data
+	auto rvalue = configuration.load(location.serverdata[serverloc_t::configuration].string(),true,".cfg") ;
+	rvalue = configuration.load(location.userdata[userloc_t::configuration].string(),true,".cfg");
+	
+	std::cout <<"Loading definition data."<< std::endl;
+	
+	rvalue =  definition.load(location.serverdata[serverloc_t::configuration].string(),true,".cfg") ;
+	rvalue =  definition.load(location.userdata[userloc_t::definition].string(),true,".cfg");
+	
+	std::cout <<"Loading language data." << std::endl;
+	
+	
+	
+	// We now have the configuration/definition data
+	std::cout <<"Normalizing configuration data."<< std::endl;
+	// we now need to normalize it
+	auto normalize = configuration.section("normalize", "config") ;
+	if (normalize != nullptr){
+		for (auto &entry : normalize->entries()){
+			if (entry.key()=="type"){
+				configuration.normalize(entry.value());
+			}
+		}
+	}
+	std::cout <<"Normalizing definition data."<< std::endl;
+	normalize = definition.section("normalize", "config") ;
+	if (normalize != nullptr){
+		for (auto &entry : normalize->entries()){
+			if (entry.key()=="type"){
+				definition.normalize(entry.value());
+			}
+		}
+	}
+	
+	std::cout <<"Removing requested configuration sections."<< std::endl;
+	// we need to remove sections
+	auto removal = configuration.type("remove") ;
+	if (removal != nullptr){
+		for (auto &sectype : *removal){
+			auto type = sectype.second.header().identifier() ;
+			for (auto &entry : sectype.second.entries()) {
+				if (entry.key() == "id"){
+					configuration.remove(type, entry.value());
+				}
+			}
+		}
+	}
+	std::cout <<"Removing requested definition sections."<< std::endl;
+	removal = definition.type("remove") ;
+	if (removal != nullptr){
+		for (auto &sectype : *removal){
+			auto type = sectype.second.header().identifier() ;
+			for (auto &entry : sectype.second.entries()) {
+				if (entry.key() == "id"){
+					definition.remove(type, entry.value());
+				}
+			}
+		}
+	}
+	return rvalue ;
+	
 }
