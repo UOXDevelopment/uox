@@ -20,11 +20,20 @@ class tileinfo ;
 
 //=========================================================
 struct universe_t {
+	
+private:
+	auto loadObjects() ->bool ;
+	auto loadWorldRegions() ->void ;
+public:
+
 	static constexpr auto ultima_maps = 6 ;
 
+
+	// We have our worlds
 	std::array<world_t,ultima_maps> worlds ;
+	// the ultmia multis
 	uomulti multicollection;
-	
+	// server locations/data
 	std::filesystem::path uodir ;
 	langmsg *language ;
 	secgroup_t *definitions ;
@@ -33,11 +42,15 @@ struct universe_t {
 	serial_generator generator ;
 	factory_t factory ;
 	serverlocation *locations ;
+	
 	universe_t() ;
+	~universe_t() ;
+	
 	universe_t(const universe_t&) = delete ;
 	auto operator=(const universe_t&) ->universe_t& = delete ;
 	
 	auto set(serverlocation *location,langmsg *language,secgroup_t *definitions, secgroup_t *configuration, tileinfo *info) ->void ;
 	auto load() ->bool ;
+	auto save() ->bool ;
 };
 #endif /* universe_hpp */

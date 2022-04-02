@@ -5,6 +5,7 @@
 
 #include <cstdint>
 #include <string>
+#include <vector>
 
 /* ******************************************************************
  point_t
@@ -36,8 +37,8 @@ struct rect_t {
 	rect_t(point_t lleft,point_t uright) ;
 	rect_t(const std::string &value);
 	auto value() const ->std::string ;
-	auto bound(const point_t &point,bool inclusive = true )->bool;
-	auto bound(const rect_t &rect,bool inclusive = true )->bool;
+	auto bound(const point_t &point,bool inclusive = true ) const ->bool;
+	auto bound(const rect_t &rect,bool inclusive = true )const ->bool;
 	auto width() const -> int ;
 	auto height() const ->int ;
 	auto size() const ->int ;
@@ -51,12 +52,36 @@ struct rect_t {
 struct location_t {
 	point_t position ;
 	int world ;
-	int realm ;
+
 	
 	location_t() ;
-	location_t(point_t point, int world, int realm=0);
+	location_t(point_t point, int world);
 	location_t(const std::string &line);
 	auto value() const ->std::string ;
 	
 };
+
+/* ******************************************************************
+ area_t
+ ***************************************************************** */
+struct region_t ;
+struct area_t {
+	rect_t boundary ;
+	region_t* belongs ;
+	area_t(const std::string &value="") ;
+};
+/* ******************************************************************
+ region_t
+ ***************************************************************** */
+struct region_t{
+	std::vector<area_t> areas ;
+	auto appendTo(std::vector<area_t> &areas) ->void ;
+	auto add(area_t area) ->void ;
+	auto add(const std::string &value)->void ;
+	auto save(std::ostream &output, const std::string &key = "area")->void ;
+	region_t() = default;
+	region_t(const region_t &regions);
+	auto operator=(const region_t &regions) ->region_t&;
+};
+
 #endif /* position_types_hpp */

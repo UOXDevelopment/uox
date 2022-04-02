@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+#include "strutil.hpp"
+
 using namespace std::string_literals;
 //=========================================================
 /* ***************************************************************
@@ -11,8 +13,9 @@ using namespace std::string_literals;
  ***************************************************************** */
 //=========================================================
 const std::unordered_map<objecttype_t, std::string> objecttype_names{
-	{objecttype_t::base,"base"s}, 	{objecttype_t::item,"item"s}, 		{objecttype_t::mob,"mob"s},
-	{objecttype_t::player,"player"s}, 	{objecttype_t::spawner, "spawner"s}, 	{objecttype_t::multi,"multi"s}
+	{objecttype_t::base,"base"s},		{objecttype_t::item,"item"s},
+	{objecttype_t::mob,"mob"s},		{objecttype_t::player,"player"s},
+	{objecttype_t::spawner,"spawner"s},	{objecttype_t::multi,"multi"s}
 };
 //=========================================================
 auto objecttypeForName(const std::string &name) ->objecttype_t {
@@ -37,10 +40,10 @@ auto objecttypeNames() ->const std::unordered_map<objecttype_t,std::string>& {
  ***************************************************************** */
 //=========================================================
 const std::unordered_map<direction_t, std::string> direction_names{
-	{direction_t::north,"north"s}, {direction_t::northeast,"northeast"s},
-	{direction_t::east,"east"s}, {direction_t::southeast,"southeast"s},
-	{direction_t::south,"south"s}, {direction_t::southwest,"southwest"s},
-	{direction_t::west,"west"s}, {direction_t::northwest,"northwest"s},
+	{direction_t::north,"north"s},	{direction_t::northeast,"northeast"s},
+	{direction_t::east,"east"s},		{direction_t::southeast,"southeast"s},
+	{direction_t::south,"south"s},	{direction_t::southwest,"southwest"s},
+	{direction_t::west,"west"s},		{direction_t::northwest,"northwest"s},
 	{direction_t::unknown,"unknown"}
 };
 //=========================================================
@@ -66,8 +69,8 @@ auto directionNames() ->const std::unordered_map<direction_t,std::string>& {
  ***************************************************************** */
 //=========================================================
 const std::unordered_map<visible_t, std::string> visible_names{
-	{visible_t::visible,"visible"s}, {visible_t::hiding,"hiding"s},
-	{visible_t::invisible,"invisible"s}, {visible_t::permenent,"permenent"s},
+	{visible_t::visible,"visible"s},		{visible_t::hiding,"hiding"s},
+	{visible_t::invisible,"invisible"s},	{visible_t::permenent,"permenent"s},
 	{visible_t::ghost,"ghost"s}
 };
 //=========================================================
@@ -93,8 +96,8 @@ auto visibleNames() ->const std::unordered_map<visible_t,std::string>& {
  ***************************************************************** */
 //=========================================================
 const std::unordered_map<movable_t, std::string> movable_names{
-	{movable_t::client,"client"s},{movable_t::always,"always"s},
-	{movable_t::never,"never"s},{movable_t::owner,"owner"s},
+	{movable_t::client,"client"s},	{movable_t::always,"always"s},
+	{movable_t::never,"never"s},		{movable_t::owner,"owner"s},
 };
 //=========================================================
 auto movableForName(const std::string &name) ->movable_t {
@@ -119,21 +122,21 @@ auto movableNames() ->const std::unordered_map<movable_t,std::string>& {
  ***************************************************************** */
 //=========================================================
 const std::unordered_map<layer_t, std::string> layer_names{
-	{layer_t::none,"none"s}, {layer_t::righthand,"righthand"s},
-	{layer_t::lefthand,"lefthand"s}, {layer_t::footwear,"footwear"s},
-	{layer_t::pants,"pants"s}, {layer_t::innershirt,"innershirt"s},
-	{layer_t::helmet,"helmet"s}, {layer_t::glove,"glove"s},
-	{layer_t::ring,"ring"s}, {layer_t::talisman,"talisman"s},
-	{layer_t::neck,"neck"s}, {layer_t::hair,"hair"s},
-	{layer_t::waist,"waist"s}, {layer_t::tunic,"tunic"s},
-	{layer_t::bracelet,"bracelet"s}, {layer_t::facialhair,"facialhair"s},
-	{layer_t::outershirt,"outershirt"s}, {layer_t::earring,"earring"s},
-	{layer_t::arms,"arms"s}, {layer_t::cloak,"cloak"s},
-	{layer_t::pack,"pack"s}, {layer_t::robe,"robe"s},
-	{layer_t::outerlegging,"outerlegging"s}, {layer_t::innerlegging,"innerlegging"s},
-	{layer_t::mount,"mount"s}, {layer_t::sellcont,"sellcont"s},
-	{layer_t::boughtcont,"boughtcont"s}, {layer_t::bankbox,"bankbox"s},
-	{layer_t::unused,"unused"s}, {layer_t::securetrade,"securetrade"s}
+	{layer_t::none,"none"s},			{layer_t::righthand,"righthand"s},
+	{layer_t::lefthand,"lefthand"s},		{layer_t::footwear,"footwear"s},
+	{layer_t::pants,"pants"s},			{layer_t::innershirt,"innershirt"s},
+	{layer_t::helmet,"helmet"s},			{layer_t::glove,"glove"s},
+	{layer_t::ring,"ring"s},			{layer_t::talisman,"talisman"s},
+	{layer_t::neck,"neck"s},			{layer_t::hair,"hair"s},
+	{layer_t::waist,"waist"s},			{layer_t::tunic,"tunic"s},
+	{layer_t::bracelet,"bracelet"s},		{layer_t::facialhair,"facialhair"s},
+	{layer_t::outershirt,"outershirt"s},	{layer_t::earring,"earring"s},
+	{layer_t::arms,"arms"s},			{layer_t::cloak,"cloak"s},
+	{layer_t::pack,"pack"s},			{layer_t::robe,"robe"s},
+	{layer_t::outerlegging,"outerlegging"s},	{layer_t::innerlegging,"innerlegging"s},
+	{layer_t::mount,"mount"s},			{layer_t::sellcont,"sellcont"s},
+	{layer_t::boughtcont,"boughtcont"s},	{layer_t::bankbox,"bankbox"s},
+	{layer_t::unused,"unused"s},			{layer_t::securetrade,"securetrade"s}
 };
 //=========================================================
 auto layerForName(const std::string &name) ->layer_t {
@@ -152,4 +155,35 @@ auto nameForLayer(layer_t layer) ->const std::string& {
 //=========================================================
 auto layerNames() ->const std::unordered_map<layer_t,std::string>& {
 	return layer_names ;
+}
+/* ***************************************************************
+ attrib_t
+ ***************************************************************** */
+//=========================================================
+attrib_t::attrib_t(int str,int dex,int intell ){
+	strength = str ;
+	dexterity = dex ;
+	intelligence = intell ;
+}
+//=========================================================
+attrib_t::attrib_t(const std::string &line):attrib_t(){
+	auto values = strutil::parse(line,",");
+	switch(values.size()){
+		default:
+		case 3:
+			intelligence=std::stoi(values[2]);
+			[[fallthrough]];
+		case 2:
+			dexterity = std::stoi(values[1]);
+			[[fallthrough]];
+		case 1:
+			strength = std::stoi(values[0]);
+			[[fallthrough]];
+		case 0:
+			break;
+	}
+}
+//=========================================================
+auto attrib_t::value() const ->std::string {
+	return std::to_string(strength)+","s+std::to_string(dexterity) + ","s + std::to_string(intelligence);
 }

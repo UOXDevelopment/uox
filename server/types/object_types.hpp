@@ -50,5 +50,16 @@ enum class layer_t {none,righthand,lefthand,footwear,pants,innershirt,helmet,glo
 auto layerForName(const std::string &name) ->layer_t ;
 auto nameForLayer(layer_t layer) ->const std::string& ;
 auto layerNames() ->const std::unordered_map<layer_t,std::string>& ;
-
+/* ***************************************************************
+ attrib_t
+ ***************************************************************** */
+struct attrib_t {
+	int strength;
+	int intelligence ;
+	int dexterity;
+	
+	attrib_t(int str=0,int dex=0,int intell=0 );
+	attrib_t(const std::string &line) ;
+	auto value() const ->std::string ;
+};
 #endif /* object_types_hpp */

@@ -102,7 +102,7 @@ auto rect_t::value() const ->std::string {
 	return lleft.value()+":"s+uright.value();
 }
 //=========================================================
-auto rect_t::bound(const point_t &point,bool inclusive  )->bool{
+auto rect_t::bound(const point_t &point,bool inclusive  )const ->bool{
 	auto rvalue = false ;
 	if (inclusive){
 		rvalue = (point.x >= this->lleft.x) && (point.x <= this->uright.x) &&
@@ -117,7 +117,7 @@ auto rect_t::bound(const point_t &point,bool inclusive  )->bool{
 
 }
 //=========================================================
-auto rect_t::bound(const rect_t &rect,bool inclusive  )->bool{
+auto rect_t::bound(const rect_t &rect,bool inclusive  )const ->bool{
 	return this->bound(rect.lleft,inclusive) && this->bound(rect.uright,inclusive);
 }
 //=========================================================
@@ -151,13 +151,12 @@ auto rect_t::operator<(const rect_t &value) const ->bool {
 //=========================================================
 location_t::location_t() {
 	world = -1 ;
-	realm = 0 ;
 }
 //=========================================================
-location_t::location_t(point_t point, int world, int realm):location_t(){
+location_t::location_t(point_t point, int world):location_t(){
 	this->position = point;
 	this->world = world ;
-	this->realm = realm ;
+	
 }
 //=========================================================
 location_t::location_t(const std::string &line):location_t(){
@@ -167,13 +166,67 @@ location_t::location_t(const std::string &line):location_t(){
 		if (values.size()>1){
 			world = std::stoi(values[1]);
 		}
-		if (values.size()>2){
-			realm = std::stoi(values[2]);
-		}
 	}
 }
 //=========================================================
 auto location_t::value() const ->std::string {
-	return position.value()+":"s+std::to_string(world)+":"s+std::to_string(realm);
+	return position.value()+":"s+std::to_string(world);
 }
 	
+/* ******************************************************************
+ area_t
+ ***************************************************************** */
+//=========================================================
+area_t::area_t(const std::string &value){
+	belongs = nullptr;
+	if (!value.empty()){
+		boundary = rect_t(value) ;
+	}
+}
+
+
+/* ******************************************************************
+ region_t
+ ***************************************************************** */
+//=========================================================
+auto region_t::appendTo(std::vector<area_t> &areas) ->void {
+	areas.insert(std::end(areas),std::begin(this->areas),std::end(this->areas));
+}
+//=========================================================
+auto region_t::add(area_t area) ->void {
+	area.belongs = this ;
+	this->areas.push_back(area);
+}
+//=========================================================
+auto region_t::add(const std::string &value) ->void {
+	auto area = area_t(value) ;
+	area.belongs = this ;
+	this->areas.push_back(area);
+}
+//=========================================================
+auto region_t::save(std::ostream &output, const std::string &key )->void {
+	for (const auto &entry : areas){
+		output <<"\t"<<key<<" = "<<entry.boundary.value()<<"\n" ;
+	}
+}
+//=========================================================
+region_t::region_t(const region_t& regions)  {
+	areas.clear() ;
+	areas = regions.areas ;
+	// We have to update the pointers!
+	std::transform(areas.begin(), areas.end(), areas.begin(), [this](area_t &area) ->area_t{
+		area.belongs = this ;
+		return area ;
+	});
+}
+//=========================================================
+auto region_t::operator=(const region_t &regions) ->region_t& {
+	areas.clear() ;
+	areas = regions.areas ;
+	// We have to update the pointers!
+	std::transform(areas.begin(), areas.end(), areas.begin(), [this](area_t &area) ->area_t{
+		area.belongs = this ;
+		return area ;
+	});
+	return *this ;
+}

@@ -10,12 +10,6 @@
 #include "uomulti.hpp"
 //=========================================================
 factory_t::~factory_t(){
-	for (auto &entry : items){
-		delete entry.second;
-	}
-	for (auto &entry : mobiles){
-		delete entry.second;
-	}
 }
 //=========================================================
 factory_t::factory_t() {
@@ -32,4 +26,9 @@ auto factory_t::set(tileinfo *info,uomulti *multi,secgroup_t *definitions, secgr
 	this->definitions = definitions;
 	this->configuration = configuration ;
 	this->languages = languages ;
+}
+//=========================================================
+auto factory_t::create(objecttype_t type, serial_t serial) ->baseobj_t* {
+	
+	return nullptr ;
 }
