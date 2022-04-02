@@ -57,7 +57,7 @@ auto world_t::addWorldRegion(const worldregion_t &region)->void{
 auto world_t::unwindWorldRegions() ->void {
 	worldareas.clear() ;
 	for (const auto &region : worldregions){
-		worldareas.insert(std::end(worldareas),std::begin(region.region.areas),std::end(region.region.areas));
+		worldareas.insert(std::end(worldareas),std::begin(region.areas),std::end(region.areas));
 	}
 	// now we need to sort them
 	std::sort(worldareas.begin(),worldareas.end(),[](const area_t &lhs, const area_t &rhs){
