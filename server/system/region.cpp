@@ -59,5 +59,11 @@ worldregion_t::worldregion_t(const section_t &section):worldregion_t(){
 			name = entry.value();
 			
 		}
+		else if (key == "area"){
+			auto area = area_t(entry.value());
+			add(area) ;
+			
+		}
+
 	}
 }

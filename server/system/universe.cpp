@@ -150,6 +150,7 @@ auto universe_t::loadWorldRegions() ->void {
 				}
 			}
 			// We now have the maps this belongs to
+			std::cout <<"Loading region :"<< section.first <<  std::endl;
 			auto region = worldregion_t(section.second);
 			for (auto worldnum : maps){
 				worlds[worldnum].addWorldRegion(region);
@@ -157,6 +158,7 @@ auto universe_t::loadWorldRegions() ->void {
 		}
 		for (auto i=0 ; i< ultima_maps; ++i) {
 			worlds[i].unwindWorldRegions();
+			std::cout <<"World " << i<<" has " << worlds[i].regionCount()<<" world regions comprising of " << worlds[i].areaCount()<<" unique areas." << std::endl;
 		}
 	}
 }

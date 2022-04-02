@@ -34,11 +34,17 @@ struct world_t {
 	// world data
 	std::vector<worldregion_t> worldregions ;
 	std::vector<area_t> worldareas ;
+
+	// Informational data
+	auto regionCount() const ->size_t ;
+	auto areaCount() const ->size_t ;
 	
+	// Initializeation
 	world_t(int mapnum=-1) ;
 	auto set(int mapnum,const std::filesystem::path &uodir,const std::filesystem::path &worldloc,langmsg *language,secgroup_t *definitions, secgroup_t *configuration, factory_t *factory,tileinfo *info) ->void ;
 	auto set(const std::filesystem::path &uodir,const std::filesystem::path &worldloc, langmsg *language,secgroup_t *definitions, secgroup_t *configuration, factory_t *factory,tileinfo *info) ->void ;
 	auto load() ->bool ;
+	
 	auto add(baseobj_t *object) ->void ;
 	auto addWorldRegion(const worldregion_t &region)->void;
 	auto unwindWorldRegions() ->void ;

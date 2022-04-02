@@ -68,3 +68,11 @@ auto world_t::unwindWorldRegions() ->void {
 auto world_t::add(baseobj_t *object) ->void {
 	
 }
+//=========================================================
+auto world_t::regionCount() const ->size_t {
+	return worldregions.size() ;
+}
+//=========================================================
+auto world_t::areaCount() const ->size_t {
+	return worldareas.size();
+}
