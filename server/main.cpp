@@ -15,6 +15,7 @@
 #include "tileinfo.hpp"
 #include "langmsg.hpp"
 #include "universe.hpp"
+#include "netsupport.hpp"
 
 using namespace std::string_literals ;
 
@@ -26,6 +27,14 @@ int main(int argc, const char * argv[]) {
 	auto retstatus = EXIT_FAILURE ;
 	if (argc > 1){
 		config_file = argv[1] ;
+	}
+	// Get the initializing network out of the way (a windows things)
+	try {
+		startNetwork() ;
+	}
+	catch(const std::exception &e) {
+		std::cerr <<"Error initializing system network system: "<<e.what()<<std::endl;
+		return EXIT_FAILURE ;
 	}
 	auto location = serverlocation() ;
 	auto configuration = secgroup_t() ;
@@ -56,7 +65,10 @@ int main(int argc, const char * argv[]) {
 				universe_t universe ;
 				universe.set(&location, &languages, &definition, &configuration, &tiledata);
 				if (universe.load()) {
+					// the worlds are loaded, objects recreated
+					// Load accounts
 					
+					// Load network
 				}
 			}
 
@@ -65,7 +77,7 @@ int main(int argc, const char * argv[]) {
 			std::cerr <<"Can not find server configuration."<<std::endl;
 		}
 	}
-	
+	stopNetwork();
 	
 	return retstatus;
 }
