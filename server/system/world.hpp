@@ -34,6 +34,11 @@ struct world_t {
 	// world data
 	std::vector<worldregion_t> worldregions ;
 	std::vector<area_t> worldareas ;
+	// instalog areas
+	std::vector<rect_t> instalog ;
+	
+	// sos areas
+	std::vector<rect_t> sosarea ;
 
 	// Informational data
 	auto regionCount() const ->size_t ;

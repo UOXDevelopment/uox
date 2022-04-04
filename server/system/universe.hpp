@@ -24,6 +24,9 @@ struct universe_t {
 private:
 	auto loadObjects() ->bool ;
 	auto loadWorldRegions() ->void ;
+	auto loadInstaLog() ->void ;
+	auto loadSos() ->void ;
+	auto loadRegions() ->void ;
 public:
 
 	static constexpr auto ultima_maps = 6 ;

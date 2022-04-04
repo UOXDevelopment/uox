@@ -5,6 +5,8 @@
 #include <iostream>
 #include <array>
 #include <fstream>
+#include <vector>
+#include <algorithm>
 
 #include "secgroup.hpp"
 #include "factory.hpp"
@@ -14,6 +16,7 @@
 #include "serverlocation.hpp"
 #include "strutil.hpp"
 #include "region.hpp"
+#include "position_types.hpp"
 
 using namespace std::string_literals;
 //=========================================================
@@ -62,8 +65,8 @@ auto universe_t::load() ->bool {
 		std::cerr <<"Error loading ultima multis."<<std::endl;
 	}
 	if (rvalue){
-		std::cout <<"Loading world regions" << std::endl;
-		loadWorldRegions();
+		std::cout <<"Loading regions" << std::endl;
+		loadRegions();
 		// We now load the raw data
 		std::cout <<"Loading world save data."<<std::endl;
 		loadObjects();
@@ -137,6 +140,86 @@ auto universe_t::loadObjects() ->bool {
 	return true ;
 }
 //======================================================================
+auto universe_t::loadRegions()->void {
+	// First , load the world regions
+	loadWorldRegions() ;
+	loadInstaLog();
+	loadSos();
+}
+
+//======================================================================
+auto universe_t::loadSos() ->void {
+	// Load the rectangles
+	auto sections = configuration->type("sosareas");
+	if (sections != nullptr){
+		for (const auto &section : *sections){
+			auto parent = section.second.header().parent() ;
+			auto maps = std::vector<int>{0};
+			if (!parent.empty()){
+				maps.clear() ;
+				for (const auto &value : strutil::parse(parent,",")){
+					maps.push_back(strutil::ston<int>(value));
+				}
+			}
+			// We now have the maps this belongs
+			auto rects = std::vector<rect_t>(section.second.entries().size()) ;
+			for (const auto &rectentry : section.second.entries()){
+				if (rectentry.key()=="area"){
+					rects.push_back(rect_t(rectentry.value()));
+				}
+			}
+			
+			for (auto worldnum : maps){
+				worlds[worldnum].sosarea.insert(std::end(worlds[worldnum].sosarea),std::begin(rects),std::end(rects));
+			}
+		}
+	}
+	// Now we need to sort the rectangles
+	for (auto i=0; i<ultima_maps;++i){
+		std::sort(worlds[i].sosarea.begin(), worlds[i].sosarea.end(),[](const rect_t &lhs, const rect_t &rhs) {
+			return lhs.size() < rhs.size() ;
+		});
+		std::cout <<"World " <<i<<" contains " << worlds[i].sosarea.size()<<" sos areas"<<std::endl;
+	}
+	
+}
+//======================================================================
+auto universe_t::loadInstaLog() ->void {
+	// Load the rectangles
+	auto sections = configuration->type("instalog");
+	if (sections != nullptr){
+		for (const auto &section : *sections){
+			auto parent = section.second.header().parent() ;
+			auto maps = std::vector<int>{0};
+			if (!parent.empty()){
+				maps.clear() ;
+				for (const auto &value : strutil::parse(parent,",")){
+					maps.push_back(strutil::ston<int>(value));
+				}
+			}
+			// We now have the maps this belongs
+			auto rects = std::vector<rect_t>(section.second.entries().size()) ;
+			for (const auto &rectentry : section.second.entries()){
+				if (rectentry.key()=="area"){
+					rects.push_back(rect_t(rectentry.value()));
+				}
+			}
+			
+			for (auto worldnum : maps){
+				worlds[worldnum].instalog.insert(std::end(worlds[worldnum].instalog),std::begin(rects),std::end(rects));
+			}
+		}
+	}
+	// Now we need to sort the rectangles
+	for (auto i=0; i<ultima_maps;++i){
+		std::sort(worlds[i].instalog.begin(), worlds[i].instalog.end(),[](const rect_t &lhs, const rect_t &rhs) {
+			return lhs.size() < rhs.size() ;
+		});
+		std::cout <<"World " <<i<<" contains " << worlds[i].instalog.size()<<" instalog areas"<<std::endl;
+	}
+
+}
+//======================================================================
 auto universe_t::loadWorldRegions() ->void {
 	auto sections = configuration->type("worldregion");
 	if (sections!=nullptr){
@@ -150,7 +233,7 @@ auto universe_t::loadWorldRegions() ->void {
 				}
 			}
 			// We now have the maps this belongs to
-			std::cout <<"Loading region :"<< section.first <<  std::endl;
+			//std::cout <<"Loading region :"<< section.first <<  std::endl;
 			auto region = worldregion_t(section.second);
 			for (auto worldnum : maps){
 				worlds[worldnum].addWorldRegion(region);
