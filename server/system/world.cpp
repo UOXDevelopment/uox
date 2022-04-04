@@ -76,3 +76,14 @@ auto world_t::regionCount() const ->size_t {
 auto world_t::areaCount() const ->size_t {
 	return worldareas.size();
 }
+//=========================================================
+auto world_t::regionFor(const point_t &point)->area_t* {
+	area_t *rvalue = nullptr ;
+	auto iter = std::find_if(worldareas.begin(), worldareas.end(), [&point](const area_t& area){
+		return area.boundary.bound(point);
+	});
+	if (iter != worldareas.end()){
+		rvalue = &(*iter) ;
+	}
+	return rvalue ;
+}
