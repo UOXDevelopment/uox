@@ -174,12 +174,12 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>support\zlib\x86\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>support\zlib\win32\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>support\zlib\x86\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>support\zlib\win32\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>zlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
     </Link>
@@ -194,14 +194,14 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>support\zlib\x86\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>support\zlib\win32\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>support\zlib\x86\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>support\zlib\win32\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>zlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
     </Link>
@@ -214,12 +214,12 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>support\zlib\x64\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>support\zlib\win64\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>support\zlib\x64\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>support\zlib\win64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>zlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
     </Link>
@@ -234,14 +234,14 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>support\zlib\x64\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>support\zlib\win64\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>support\zlib\x64\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>support\zlib\win64\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>zlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
     </Link>
