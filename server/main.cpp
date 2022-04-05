@@ -16,6 +16,8 @@
 #include "langmsg.hpp"
 #include "universe.hpp"
 #include "netsupport.hpp"
+#include "account.hpp"
+#include "strutil.hpp"
 
 using namespace std::string_literals ;
 
@@ -67,7 +69,16 @@ int main(int argc, const char * argv[]) {
 				if (universe.load()) {
 					// the worlds are loaded, objects recreated
 					// Load accounts
+					auto account_create = true ;
+					auto actkeyvalue = servercfg->last("autoaccount");
+					if (actkeyvalue){
+						account_create = strutil::ston<bool>(actkeyvalue->value());
+					}
 					
+					auto account = actholder_t(account_create,&universe.factory) ;
+					std::cout <<"Loading account information: " ;
+					account.set(location.userdata[userloc_t::access].string()) ;
+					std::cout <<account.size() <<" accounts."<<std::endl;
 					// Load network
 				}
 			}

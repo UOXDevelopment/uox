@@ -6,13 +6,26 @@
 #include <cstdint>
 #include <string>
 #include <unordered_map>
+#include <limits>
+
 
 //=========================================================
 /* ********************************************************
  general
  ****************************************************** */
 using actnum_t = int ;
+constexpr auto invalid_account = std::numeric_limits<int>::max() ;
 constexpr auto max_characters = 7 ;
+/* ********************************************************
+ priv_t
+ ****************************************************** */
+enum class priv_t {player,seer,admin};
+//=========================================================
+auto nameForPriv(priv_t priv) -> const std::string& ;
+//=========================================================
+//=========================================================
+auto privForName(const std::string &name) ->priv_t ;
+auto privNames() ->const std::unordered_map<priv_t,std::string>& ;
 
 //=========================================================
 /* ******************************************************

@@ -11,6 +11,32 @@ using namespace std::string_literals;
 
 
 
+//=========================================================
+/* ******************************************************
+ priv_t
+ *******************************************************/
+//=========================================================
+const std::unordered_map<priv_t,std::string> priv_names{
+	{priv_t::player,"player"s},{priv_t::seer,"seer"s},{priv_t::admin,"admin"s}
+};
+//=========================================================
+auto nameForPriv(priv_t modifier) -> const std::string& {
+	return priv_names.at(modifier);
+}
+//=========================================================
+auto privForName(const std::string &name) ->priv_t {
+	auto iter = std::find_if(priv_names.begin(),priv_names.end(),[&name](const std::pair<priv_t,std::string> &entry){
+		return entry.second == name ;
+	});
+	if (iter != priv_names.end()){
+		return iter->first ;
+	}
+	throw std::out_of_range(name +" is not a valid priv_t type"s);
+}
+//=========================================================
+auto privNames() ->const std::unordered_map<priv_t,std::string>& {
+	return priv_names;
+}
 
 //=========================================================
 /* ******************************************************
