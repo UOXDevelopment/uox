@@ -1,17 +1,270 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="server">
+      <UniqueIdentifier>{72edaf05-cba2-4753-ba01-31f2df5ecc90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\clientobjects">
+      <UniqueIdentifier>{91d623c4-44b2-47d2-84ab-662969ba1420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\io">
+      <UniqueIdentifier>{afd5abf6-7db1-4bab-a8fa-8c2cd5c3d741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\system">
+      <UniqueIdentifier>{65bf54b0-11d1-4d21-8b5d-c8fd96ce42d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\types">
+      <UniqueIdentifier>{e3755dd2-4b41-4d24-98ea-b57db6c40e58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\ultima">
+      <UniqueIdentifier>{bcdf8742-56a7-427c-a8b7-c82f096a64fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\utility">
+      <UniqueIdentifier>{7253c5b0-d011-4f1a-9aad-c8ef54932b5b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="server\main.cpp">
+      <Filter>server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\clientobjects\baseobj.cpp">
+      <Filter>server\clientobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="server\clientobjects\factory.cpp">
+      <Filter>server\clientobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="server\clientobjects\itemobj.cpp">
+      <Filter>server\clientobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="server\clientobjects\mobobj.cpp">
+      <Filter>server\clientobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="server\clientobjects\playerobj.cpp">
+      <Filter>server\clientobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="server\clientobjects\serial_generator.cpp">
+      <Filter>server\clientobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="server\io\console.cpp">
+      <Filter>server\io</Filter>
+    </ClCompile>
+    <ClCompile Include="server\io\logger.cpp">
+      <Filter>server\io</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\bytebuffer.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\EventTimer.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\header.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\ip4addr.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\ip4list.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\keyvalue.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\mapip.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\netexcept.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\netsupport.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\secgroup.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\secparser.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\section.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\socket.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\utility\strutil.cpp">
+      <Filter>server\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ultima\artblock.cpp">
+      <Filter>server\ultima</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ultima\terrainblock.cpp">
+      <Filter>server\ultima</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ultima\tileinfo.cpp">
+      <Filter>server\ultima</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ultima\uomap.cpp">
+      <Filter>server\ultima</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ultima\uomulti.cpp">
+      <Filter>server\ultima</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ultima\uopfile.cpp">
+      <Filter>server\ultima</Filter>
+    </ClCompile>
+    <ClCompile Include="server\types\object_types.cpp">
+      <Filter>server\types</Filter>
+    </ClCompile>
+    <ClCompile Include="server\types\position_types.cpp">
+      <Filter>server\types</Filter>
+    </ClCompile>
+    <ClCompile Include="server\types\system_types.cpp">
+      <Filter>server\types</Filter>
+    </ClCompile>
+    <ClCompile Include="server\types\ultima_types.cpp">
+      <Filter>server\types</Filter>
+    </ClCompile>
+    <ClCompile Include="server\system\account.cpp">
+      <Filter>server\system</Filter>
+    </ClCompile>
+    <ClCompile Include="server\system\langmsg.cpp">
+      <Filter>server\system</Filter>
+    </ClCompile>
+    <ClCompile Include="server\system\region.cpp">
+      <Filter>server\system</Filter>
+    </ClCompile>
+    <ClCompile Include="server\system\serverlocation.cpp">
+      <Filter>server\system</Filter>
+    </ClCompile>
+    <ClCompile Include="server\system\universe.cpp">
+      <Filter>server\system</Filter>
+    </ClCompile>
+    <ClCompile Include="server\system\world.cpp">
+      <Filter>server\system</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="server\clientobjects\baseobj.hpp">
+      <Filter>server\clientobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="server\clientobjects\factory.hpp">
+      <Filter>server\clientobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="server\clientobjects\itemobj.hpp">
+      <Filter>server\clientobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="server\clientobjects\mobobj.hpp">
+      <Filter>server\clientobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="server\clientobjects\playerobj.hpp">
+      <Filter>server\clientobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="server\clientobjects\serial_generator.hpp">
+      <Filter>server\clientobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="server\io\console.hpp">
+      <Filter>server\io</Filter>
+    </ClInclude>
+    <ClInclude Include="server\io\logger.hpp">
+      <Filter>server\io</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\bytebuffer.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\EventTimer.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\header.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\ip4addr.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\ip4list.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\keyvalue.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\mapip.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\netexcept.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\netsupport.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\secgroup.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\secparser.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\section.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\socket.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\utility\strutil.hpp">
+      <Filter>server\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ultima\artblock.hpp">
+      <Filter>server\ultima</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ultima\terrainblock.hpp">
+      <Filter>server\ultima</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ultima\tileinfo.hpp">
+      <Filter>server\ultima</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ultima\uomap.hpp">
+      <Filter>server\ultima</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ultima\uomulti.hpp">
+      <Filter>server\ultima</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ultima\uopfile.hpp">
+      <Filter>server\ultima</Filter>
+    </ClInclude>
+    <ClInclude Include="server\types\object_types.hpp">
+      <Filter>server\types</Filter>
+    </ClInclude>
+    <ClInclude Include="server\types\position_types.hpp">
+      <Filter>server\types</Filter>
+    </ClInclude>
+    <ClInclude Include="server\types\system_types.hpp">
+      <Filter>server\types</Filter>
+    </ClInclude>
+    <ClInclude Include="server\types\ultima_types.hpp">
+      <Filter>server\types</Filter>
+    </ClInclude>
+    <ClInclude Include="server\system\account.hpp">
+      <Filter>server\system</Filter>
+    </ClInclude>
+    <ClInclude Include="server\system\langmsg.hpp">
+      <Filter>server\system</Filter>
+    </ClInclude>
+    <ClInclude Include="server\system\region.hpp">
+      <Filter>server\system</Filter>
+    </ClInclude>
+    <ClInclude Include="server\system\serverlocation.hpp">
+      <Filter>server\system</Filter>
+    </ClInclude>
+    <ClInclude Include="server\system\universe.hpp">
+      <Filter>server\system</Filter>
+    </ClInclude>
+    <ClInclude Include="server\system\world.hpp">
+      <Filter>server\system</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="server\utility\CMakeLists.txt">
+      <Filter>server\utility</Filter>
+    </Text>
   </ItemGroup>
 </Project>

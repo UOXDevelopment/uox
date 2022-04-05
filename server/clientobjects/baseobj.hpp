@@ -11,7 +11,7 @@
 #include "position_types.hpp"
 #include "section.hpp"
 
-class factory_t ;
+struct factory_t ;
 
 //=========================================================
 struct baseobj_t {

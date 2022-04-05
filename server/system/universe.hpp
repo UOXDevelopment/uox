@@ -15,7 +15,7 @@
 
 class secgroup_t ;
 class langmsg ;
-class serverlocation;
+struct serverlocation;
 class tileinfo ;
 
 //=========================================================

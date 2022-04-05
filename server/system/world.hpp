@@ -19,8 +19,8 @@ struct universe_t;
 //=========================================================
 struct world_t {
 private:
-	friend class factory_t ;
-	friend class universe_t;
+	friend struct factory_t ;
+	friend struct universe_t;
 	auto addWorldRegion(const worldregion_t &region)->void;
 	auto unwindWorldRegions() ->void ;
 	auto set(const std::filesystem::path &uodir,const std::filesystem::path &worldloc, langmsg *language,secgroup_t *definitions, secgroup_t *configuration, factory_t *factory,tileinfo *info) ->void ;

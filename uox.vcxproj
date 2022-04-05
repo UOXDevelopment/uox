@@ -18,6 +18,90 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="server\clientobjects\baseobj.cpp" />
+    <ClCompile Include="server\clientobjects\factory.cpp" />
+    <ClCompile Include="server\clientobjects\itemobj.cpp" />
+    <ClCompile Include="server\clientobjects\mobobj.cpp" />
+    <ClCompile Include="server\clientobjects\playerobj.cpp" />
+    <ClCompile Include="server\clientobjects\serial_generator.cpp" />
+    <ClCompile Include="server\io\console.cpp" />
+    <ClCompile Include="server\io\logger.cpp" />
+    <ClCompile Include="server\main.cpp" />
+    <ClCompile Include="server\system\account.cpp" />
+    <ClCompile Include="server\system\langmsg.cpp" />
+    <ClCompile Include="server\system\region.cpp" />
+    <ClCompile Include="server\system\serverlocation.cpp" />
+    <ClCompile Include="server\system\universe.cpp" />
+    <ClCompile Include="server\system\world.cpp" />
+    <ClCompile Include="server\types\object_types.cpp" />
+    <ClCompile Include="server\types\position_types.cpp" />
+    <ClCompile Include="server\types\system_types.cpp" />
+    <ClCompile Include="server\types\ultima_types.cpp" />
+    <ClCompile Include="server\ultima\artblock.cpp" />
+    <ClCompile Include="server\ultima\terrainblock.cpp" />
+    <ClCompile Include="server\ultima\tileinfo.cpp" />
+    <ClCompile Include="server\ultima\uomap.cpp" />
+    <ClCompile Include="server\ultima\uomulti.cpp" />
+    <ClCompile Include="server\ultima\uopfile.cpp" />
+    <ClCompile Include="server\utility\bytebuffer.cpp" />
+    <ClCompile Include="server\utility\EventTimer.cpp" />
+    <ClCompile Include="server\utility\header.cpp" />
+    <ClCompile Include="server\utility\ip4addr.cpp" />
+    <ClCompile Include="server\utility\ip4list.cpp" />
+    <ClCompile Include="server\utility\keyvalue.cpp" />
+    <ClCompile Include="server\utility\mapip.cpp" />
+    <ClCompile Include="server\utility\netexcept.cpp" />
+    <ClCompile Include="server\utility\netsupport.cpp" />
+    <ClCompile Include="server\utility\secgroup.cpp" />
+    <ClCompile Include="server\utility\secparser.cpp" />
+    <ClCompile Include="server\utility\section.cpp" />
+    <ClCompile Include="server\utility\socket.cpp" />
+    <ClCompile Include="server\utility\strutil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="server\clientobjects\baseobj.hpp" />
+    <ClInclude Include="server\clientobjects\factory.hpp" />
+    <ClInclude Include="server\clientobjects\itemobj.hpp" />
+    <ClInclude Include="server\clientobjects\mobobj.hpp" />
+    <ClInclude Include="server\clientobjects\playerobj.hpp" />
+    <ClInclude Include="server\clientobjects\serial_generator.hpp" />
+    <ClInclude Include="server\io\console.hpp" />
+    <ClInclude Include="server\io\logger.hpp" />
+    <ClInclude Include="server\system\account.hpp" />
+    <ClInclude Include="server\system\langmsg.hpp" />
+    <ClInclude Include="server\system\region.hpp" />
+    <ClInclude Include="server\system\serverlocation.hpp" />
+    <ClInclude Include="server\system\universe.hpp" />
+    <ClInclude Include="server\system\world.hpp" />
+    <ClInclude Include="server\types\object_types.hpp" />
+    <ClInclude Include="server\types\position_types.hpp" />
+    <ClInclude Include="server\types\system_types.hpp" />
+    <ClInclude Include="server\types\ultima_types.hpp" />
+    <ClInclude Include="server\ultima\artblock.hpp" />
+    <ClInclude Include="server\ultima\terrainblock.hpp" />
+    <ClInclude Include="server\ultima\tileinfo.hpp" />
+    <ClInclude Include="server\ultima\uomap.hpp" />
+    <ClInclude Include="server\ultima\uomulti.hpp" />
+    <ClInclude Include="server\ultima\uopfile.hpp" />
+    <ClInclude Include="server\utility\bytebuffer.hpp" />
+    <ClInclude Include="server\utility\EventTimer.hpp" />
+    <ClInclude Include="server\utility\header.hpp" />
+    <ClInclude Include="server\utility\ip4addr.hpp" />
+    <ClInclude Include="server\utility\ip4list.hpp" />
+    <ClInclude Include="server\utility\keyvalue.hpp" />
+    <ClInclude Include="server\utility\mapip.hpp" />
+    <ClInclude Include="server\utility\netexcept.hpp" />
+    <ClInclude Include="server\utility\netsupport.hpp" />
+    <ClInclude Include="server\utility\secgroup.hpp" />
+    <ClInclude Include="server\utility\secparser.hpp" />
+    <ClInclude Include="server\utility\section.hpp" />
+    <ClInclude Include="server\utility\socket.hpp" />
+    <ClInclude Include="server\utility\strutil.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="server\utility\CMakeLists.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -88,6 +172,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <AdditionalIncludeDirectories>server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -102,6 +189,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <AdditionalIncludeDirectories>server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -116,6 +206,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <AdditionalIncludeDirectories>server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +223,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <AdditionalIncludeDirectories>server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
