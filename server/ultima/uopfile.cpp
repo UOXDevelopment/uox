@@ -51,7 +51,7 @@ auto	uopfile::table_entry::save(std::ostream &output) ->uopfile::table_entry & {
  zlib wrappers for compression
  ***********************************************************************/
 //=============================================================================
-auto uopfile::decompress(const std::vector<uint8_t> &source, std::size_t decompressed_size) const ->std::vector<uint8_t>{
+auto uopfile::zdecompress(const std::vector<uint8_t> &source, std::size_t decompressed_size) const ->std::vector<uint8_t>{
 	// uLongf is from zlib.h
 	auto srcsize = static_cast<uLongf>(source.size()) ;
 	auto destsize = static_cast<uLongf>(decompressed_size);
@@ -66,7 +66,7 @@ auto uopfile::decompress(const std::vector<uint8_t> &source, std::size_t decompr
 	return dest ;
 }
 //=============================================================================
-auto uopfile::compress(const std::vector<uint8_t> &source) const ->std::vector<uint8_t>{
+auto uopfile::zcompress(const std::vector<uint8_t> &source) const ->std::vector<uint8_t>{
 	auto size = compressBound(static_cast<uLong>(source.size()));
 	std::vector<uint8_t> rdata(size,0);
 	auto status = compress2(reinterpret_cast<Bytef*>(rdata.data()), &size, reinterpret_cast<const Bytef*>(source.data()), static_cast<uLongf>(source.size()),Z_DEFAULT_COMPRESSION);
@@ -289,7 +289,7 @@ auto uopfile::loadUOP(const std::string &filepath, std::size_t max_hashindex , c
 			std::vector<std::uint8_t> uopdata(size,0);
 			input.read(reinterpret_cast<char*>(uopdata.data()),size);
 			if (entry.compression == 1){
-				uopdata = decompress(uopdata, entry.decompressed_length);
+				uopdata = zdecompress(uopdata, entry.decompressed_length);
 			}
 			// First see if we should even do anything with this hash
 			if (processHash(entry.identifer, current_entry, uopdata)) {
@@ -373,7 +373,7 @@ auto uopfile::writeUOP(const std::string &filepath) ->bool {
 			unsigned int sizeOut = sizeDecompressed ;
 			if ((compress != 0) && (sizeDecompressed>0)){
 				
-				auto dataout = this->compress(rawdata) ;
+				auto dataout = this->zcompress(rawdata) ;
 				sizeOut = static_cast<unsigned int>(dataout.size()) ;
 				rawdata = dataout ;
 			}

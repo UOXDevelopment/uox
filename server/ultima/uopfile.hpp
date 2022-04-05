@@ -162,8 +162,8 @@ private:
 	auto findIndex(const std::vector<std::uint64_t> &hashdata, std::uint64_t hash) ->std::size_t;
 	
 	/****************** zlib compression wrappers *********************/
-	auto compress(const std::vector<std::uint8_t> &data) const ->std::vector<unsigned char>;
-	auto decompress(const std::vector<std::uint8_t> &source, std::size_t decompressed_size) const ->std::vector<unsigned char>;
+	auto zcompress(const std::vector<std::uint8_t> &data) const ->std::vector<unsigned char>;
+	auto zdecompress(const std::vector<std::uint8_t> &source, std::size_t decompressed_size) const ->std::vector<unsigned char>;
 	
 	
 	auto buildIndexHashes(const std::string &hashformat, std::size_t max_index) ->std::vector<std::uint64_t>;
