@@ -30,6 +30,7 @@ target_include_directories(types
 		../utility
 		../clientobjects
 		../io
+		../network
 		../system
 		../ultima
 if(WIN32)

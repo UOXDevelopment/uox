@@ -16,39 +16,35 @@ else ()
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 endif()
 
-add_library(system 
+add_library(network
 	STATIC
-		account.cpp
-		langmsg.cpp
-		region.cpp
-		serverlocation.cpp
-		universe.cpp
-		world.cpp
+		client.cpp
+		packet.cpp
 )
 
 
-target_include_directories(system 
+target_include_directories(network
 	PRIVATE
 		../utility
 		../clientobjects
-		../network
-		../io
+		../system
 		../types
 		../ultima
+		../io
 if(WIN32)
 		../../support/zlib/win64/include
 endif()
 )
 
 		
-target_compile_options(system 
+target_compile_options(network
 	PRIVATE
 		$<$<PLATFORM_ID:Windows>:/W3>
 
 		$<$<PLATFORM_ID:Linux>:-Wno-unused-result>
 )
 
-target_compile_definitions(system
+target_compile_definitions(network
 	PRIVATE
 		$<$<PLATFORM_ID:Windows>:_LIB>
 		$<$<PLATFORM_ID:Windows>:_UNICODE>

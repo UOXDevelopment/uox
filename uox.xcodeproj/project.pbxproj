@@ -47,6 +47,8 @@
 		64B714ED27F61762004F1042 /* universe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714EB27F61762004F1042 /* universe.cpp */; };
 		64B714F027F63CAD004F1042 /* baseobj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714EE27F63CAD004F1042 /* baseobj.cpp */; };
 		64B714F327F64AC0004F1042 /* position_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64B714F127F64AC0004F1042 /* position_types.cpp */; };
+		64F07A8727FDF495004E4D41 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F07A8527FDF495004E4D41 /* client.cpp */; };
+		64F07A8A27FDF78A004E4D41 /* packet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F07A8827FDF78A004E4D41 /* packet.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -142,6 +144,17 @@
 		64B714EF27F63CAD004F1042 /* baseobj.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = baseobj.hpp; sourceTree = "<group>"; };
 		64B714F127F64AC0004F1042 /* position_types.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = position_types.cpp; sourceTree = "<group>"; };
 		64B714F227F64AC0004F1042 /* position_types.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = position_types.hpp; sourceTree = "<group>"; };
+		64F07A8527FDF495004E4D41 /* client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = client.cpp; sourceTree = "<group>"; };
+		64F07A8627FDF495004E4D41 /* client.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = client.hpp; sourceTree = "<group>"; };
+		64F07A8827FDF78A004E4D41 /* packet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = packet.cpp; sourceTree = "<group>"; };
+		64F07A8927FDF78A004E4D41 /* packet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = packet.hpp; sourceTree = "<group>"; };
+		64F07A8B27FDF7D6004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		64F07A8C27FDF7E5004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		64F07A8D27FDF7F3004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		64F07A8E27FDF800004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		64F07A8F27FDF80D004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		64F07A9027FDF850004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		64F07A9127FDF8B8004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +189,9 @@
 		6444452027F4D52C00E89EAC /* server */ = {
 			isa = PBXGroup;
 			children = (
+				64F07A9027FDF850004E4D41 /* CMakeLists.txt */,
 				6444452627F4D52C00E89EAC /* main.cpp */,
+				64F07A8427FDF44A004E4D41 /* network */,
 				6444452527F4D52C00E89EAC /* clientobjects */,
 				6444452227F4D52C00E89EAC /* io */,
 				6444452327F4D52C00E89EAC /* system */,
@@ -190,6 +205,7 @@
 		6444452127F4D52C00E89EAC /* types */ = {
 			isa = PBXGroup;
 			children = (
+				64F07A8E27FDF800004E4D41 /* CMakeLists.txt */,
 				64B714E827F5FC15004F1042 /* ultima_types.cpp */,
 				64B714E927F5FC15004F1042 /* ultima_types.hpp */,
 				6444455727F4D5ED00E89EAC /* system_types.cpp */,
@@ -205,6 +221,7 @@
 		6444452227F4D52C00E89EAC /* io */ = {
 			isa = PBXGroup;
 			children = (
+				64F07A8C27FDF7E5004E4D41 /* CMakeLists.txt */,
 				645D979527FB1D65009967D9 /* console.cpp */,
 				645D979727FB1D65009967D9 /* console.hpp */,
 				645D979827FB1D65009967D9 /* logger.cpp */,
@@ -216,6 +233,7 @@
 		6444452327F4D52C00E89EAC /* system */ = {
 			isa = PBXGroup;
 			children = (
+				64F07A8D27FDF7F3004E4D41 /* CMakeLists.txt */,
 				649A9BC627F4EDB40088A8E4 /* serverlocation.cpp */,
 				649A9BC727F4EDB40088A8E4 /* serverlocation.hpp */,
 				64B714CD27F5B8DD004F1042 /* langmsg.cpp */,
@@ -235,6 +253,7 @@
 		6444452427F4D52C00E89EAC /* ultima */ = {
 			isa = PBXGroup;
 			children = (
+				64F07A8F27FDF80D004E4D41 /* CMakeLists.txt */,
 				64B714D527F5F54E004F1042 /* artblock.cpp */,
 				64B714D427F5F54E004F1042 /* artblock.hpp */,
 				64B714D327F5F54E004F1042 /* terrainblock.cpp */,
@@ -254,6 +273,7 @@
 		6444452527F4D52C00E89EAC /* clientobjects */ = {
 			isa = PBXGroup;
 			children = (
+				64F07A8B27FDF7D6004E4D41 /* CMakeLists.txt */,
 				64B714DC27F5F695004F1042 /* factory.cpp */,
 				64B714DD27F5F695004F1042 /* factory.hpp */,
 				64B714DF27F5F6C2004F1042 /* serial_generator.cpp */,
@@ -273,9 +293,9 @@
 		6444452727F4D52C00E89EAC /* utility */ = {
 			isa = PBXGroup;
 			children = (
+				6444452927F4D58400E89EAC /* CMakeLists.txt */,
 				6444452E27F4D58400E89EAC /* bytebuffer.cpp */,
 				6444454327F4D58500E89EAC /* bytebuffer.hpp */,
-				6444452927F4D58400E89EAC /* CMakeLists.txt */,
 				6444454427F4D58500E89EAC /* EventTimer.cpp */,
 				6444452A27F4D58400E89EAC /* EventTimer.hpp */,
 				6444454227F4D58500E89EAC /* header.cpp */,
@@ -312,6 +332,18 @@
 				6444455527F4D5A200E89EAC /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64F07A8427FDF44A004E4D41 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				64F07A9127FDF8B8004E4D41 /* CMakeLists.txt */,
+				64F07A8527FDF495004E4D41 /* client.cpp */,
+				64F07A8627FDF495004E4D41 /* client.hpp */,
+				64F07A8827FDF78A004E4D41 /* packet.cpp */,
+				64F07A8927FDF78A004E4D41 /* packet.hpp */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +424,7 @@
 				64B714E427F5F725004F1042 /* object_types.cpp in Sources */,
 				6444455127F4D58500E89EAC /* header.cpp in Sources */,
 				6444454F27F4D58500E89EAC /* mapip.cpp in Sources */,
+				64F07A8A27FDF78A004E4D41 /* packet.cpp in Sources */,
 				645D97A027FB5F3E009967D9 /* mobobj.cpp in Sources */,
 				6444454A27F4D58500E89EAC /* section.cpp in Sources */,
 				6444454627F4D58500E89EAC /* secparser.cpp in Sources */,
@@ -406,6 +439,7 @@
 				6444452827F4D52C00E89EAC /* main.cpp in Sources */,
 				64B714F027F63CAD004F1042 /* baseobj.cpp in Sources */,
 				645D979D27FB5E2D009967D9 /* account.cpp in Sources */,
+				64F07A8727FDF495004E4D41 /* client.cpp in Sources */,
 				64B714DE27F5F695004F1042 /* factory.cpp in Sources */,
 				6444454B27F4D58500E89EAC /* strutil.cpp in Sources */,
 				6444454D27F4D58500E89EAC /* ip4list.cpp in Sources */,

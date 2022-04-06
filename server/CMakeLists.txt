@@ -22,6 +22,7 @@ add_subdirectory(./system)
 add_subdirectory(./types)
 add_subdirectory(./ultima)
 add_subdirectory(./utility)
+add_subdirectory(./network)
 
 
 add_executable(uox 
@@ -34,6 +35,7 @@ target_include_directories(uox
 		./io
 		./types
 		./ultima
+		./network
 		./system
 if(WIN32)
 		../support/zlib/win64/include
@@ -56,6 +58,7 @@ target_link_libraries(uox PUBLIC
 	types
 	ultima
 	utility
+	network
 	Ws2_32
 	${ZLIB_LIBRARY}
 
@@ -68,6 +71,7 @@ target_link_libraries(uox PUBLIC
 	types
 	ultima
 	utility
+	network
 	-lz
 
 )

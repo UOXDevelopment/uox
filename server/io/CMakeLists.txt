@@ -27,6 +27,7 @@ target_include_directories(io
 	PRIVATE
 		../utility
 		../clientobjects
+		../network
 		../system
 		../types
 		../ultima
