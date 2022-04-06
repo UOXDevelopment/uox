@@ -42,7 +42,6 @@ int main(int argc, const char * argv[]) {
 	auto configuration = secgroup_t() ;
 	auto definition = secgroup_t() ;
 	auto langauges = langmsg() ;
-	
 	if (location.load(config_file)) {
 		loadData(location,configuration, definition);
 		// Before we go any further, get the server configuration, we need some information
