@@ -26,6 +26,9 @@
     <Filter Include="server\utility">
       <UniqueIdentifier>{7253c5b0-d011-4f1a-9aad-c8ef54932b5b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="server\network">
+      <UniqueIdentifier>{fa5a162c-f40f-4d0c-8c18-fd61f6716aa5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="server\main.cpp">
@@ -145,6 +148,12 @@
     <ClCompile Include="server\system\world.cpp">
       <Filter>server\system</Filter>
     </ClCompile>
+    <ClCompile Include="server\network\client.cpp">
+      <Filter>server\network</Filter>
+    </ClCompile>
+    <ClCompile Include="server\network\packet.cpp">
+      <Filter>server\network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="server\clientobjects\baseobj.hpp">
@@ -261,10 +270,37 @@
     <ClInclude Include="server\system\world.hpp">
       <Filter>server\system</Filter>
     </ClInclude>
+    <ClInclude Include="server\network\client.hpp">
+      <Filter>server\network</Filter>
+    </ClInclude>
+    <ClInclude Include="server\network\packet.hpp">
+      <Filter>server\network</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="server\utility\CMakeLists.txt">
       <Filter>server\utility</Filter>
+    </Text>
+    <Text Include="server\network\CMakeLists.txt">
+      <Filter>server\network</Filter>
+    </Text>
+    <Text Include="server\CMakeLists.txt">
+      <Filter>server</Filter>
+    </Text>
+    <Text Include="server\clientobjects\CMakeLists.txt">
+      <Filter>server\clientobjects</Filter>
+    </Text>
+    <Text Include="server\io\CMakeLists.txt">
+      <Filter>server\io</Filter>
+    </Text>
+    <Text Include="server\system\CMakeLists.txt">
+      <Filter>server\system</Filter>
+    </Text>
+    <Text Include="server\types\CMakeLists.txt">
+      <Filter>server\types</Filter>
+    </Text>
+    <Text Include="server\ultima\CMakeLists.txt">
+      <Filter>server\ultima</Filter>
     </Text>
   </ItemGroup>
 </Project>

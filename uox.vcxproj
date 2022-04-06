@@ -28,6 +28,8 @@
     <ClCompile Include="server\io\console.cpp" />
     <ClCompile Include="server\io\logger.cpp" />
     <ClCompile Include="server\main.cpp" />
+    <ClCompile Include="server\network\client.cpp" />
+    <ClCompile Include="server\network\packet.cpp" />
     <ClCompile Include="server\system\account.cpp" />
     <ClCompile Include="server\system\langmsg.cpp" />
     <ClCompile Include="server\system\region.cpp" />
@@ -68,6 +70,8 @@
     <ClInclude Include="server\clientobjects\serial_generator.hpp" />
     <ClInclude Include="server\io\console.hpp" />
     <ClInclude Include="server\io\logger.hpp" />
+    <ClInclude Include="server\network\client.hpp" />
+    <ClInclude Include="server\network\packet.hpp" />
     <ClInclude Include="server\system\account.hpp" />
     <ClInclude Include="server\system\langmsg.hpp" />
     <ClInclude Include="server\system\region.hpp" />
@@ -100,6 +104,13 @@
     <ClInclude Include="server\utility\strutil.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="server\clientobjects\CMakeLists.txt" />
+    <Text Include="server\CMakeLists.txt" />
+    <Text Include="server\io\CMakeLists.txt" />
+    <Text Include="server\network\CMakeLists.txt" />
+    <Text Include="server\system\CMakeLists.txt" />
+    <Text Include="server\types\CMakeLists.txt" />
+    <Text Include="server\ultima\CMakeLists.txt" />
     <Text Include="server\utility\CMakeLists.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
