@@ -3,6 +3,7 @@
 #include "ultima_types.hpp"
 
 #include <iostream>
+#include <algorithm>
 
 using namespace std::string_literals ;
 //=========================================================

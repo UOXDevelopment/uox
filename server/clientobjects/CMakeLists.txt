@@ -35,7 +35,7 @@ target_include_directories(clientobjects
 		../types
 		../ultima
 if(WIN32)
-		../../support/zlib/win64
+		../../support/zlib/win64/include
 endif()
 )
 

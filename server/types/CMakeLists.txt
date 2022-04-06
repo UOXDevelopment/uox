@@ -33,7 +33,7 @@ target_include_directories(types
 		../system
 		../ultima
 if(WIN32)
-		../../support/zlib/win64
+		../../support/zlib/win64/include
 endif()
 )
 
