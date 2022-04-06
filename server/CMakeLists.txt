@@ -57,7 +57,7 @@ target_link_libraries(uox PUBLIC
 	ultima
 	utility
 	Ws2_32
-	zlib
+	${ZLIB_LIBRARY}
 
 )
 else()
