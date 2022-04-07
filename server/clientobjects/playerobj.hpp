@@ -6,10 +6,16 @@
 #include <cstdint>
 
 #include "mobobj.hpp"
+
+class client_t ;
 //=========================================================
 struct playerobj_t : public mobobj_t {
+
+	client_t *client ;
+
+
 	playerobj_t() ;
-	virtual ~playerobj_t() ;
+	~playerobj_t() ;
 
 };
 #endif /* playerobj_hpp */

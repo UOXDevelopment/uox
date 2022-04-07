@@ -11,6 +11,8 @@
 
 #include "packet.hpp"
 #include "socket.hpp"
+
+struct playerobj_t ;
 //=========================================================
 class client_t  {
 private:
@@ -24,10 +26,19 @@ private:
 public:
 	bool log_incoming ;
 	bool log_outgoing ;
+	bool logoff ;
+	playerobj_t *player ;
 	
-	client_t();
 	~client_t() ;
-	
+	client_t();
+	client_t(std::unique_ptr<socket_t> &socket);
+	auto set(std::unique_ptr<socket_t> &socket)->client_t&;
 	auto name() const ->std::string ;
+	auto read() ->void ;
+	auto write() ->void ;
+	auto size() const ->size_t ;
+	auto valid() const ->bool ;
+	auto packet() ->std::unique_ptr<packet_t> ;
+	
 };
 #endif /* client_hpp */
