@@ -227,7 +227,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>support\zlib\win64\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>support\zlib\win64\include;server;server\network;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -247,7 +247,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
-      <AdditionalIncludeDirectories>support\zlib\win64\include;server;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>support\zlib\win64\include;server;server\network;server\system;server\types;server\ultima;server\utility;server\io;server\clientobjects;support\zlib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

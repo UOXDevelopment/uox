@@ -22,7 +22,7 @@ private:
 	
 public:
 	serversock_t();
-	
+	~serversock_t();
 	auto listen()->void ;
 	auto serviceConnection() ->client_t* ;
 	auto serviceRead() ->void ;
