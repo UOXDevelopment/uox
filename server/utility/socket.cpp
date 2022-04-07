@@ -53,6 +53,11 @@ socket_t::~socket_t() {
 	}
 }
 //===================================================================
+auto socket_t::valid() const ->bool {
+	return _descriptor != invalid_socket ;
+}
+
+//===================================================================
 // There is really nothing to set up for windows.  For linux we
 // we set the write flag to not SIGPIPE if writing to
 // a closed socket. For APPLE,

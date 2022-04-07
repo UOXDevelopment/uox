@@ -155,6 +155,8 @@
 		64F07A8F27FDF80D004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		64F07A9027FDF850004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		64F07A9127FDF8B8004E4D41 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		64FF2F5527FF190A0078AE66 /* serversock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = serversock.cpp; sourceTree = "<group>"; };
+		64FF2F5627FF190A0078AE66 /* serversock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = serversock.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,8 @@
 				64F07A9127FDF8B8004E4D41 /* CMakeLists.txt */,
 				64F07A8527FDF495004E4D41 /* client.cpp */,
 				64F07A8627FDF495004E4D41 /* client.hpp */,
+				64FF2F5527FF190A0078AE66 /* serversock.cpp */,
+				64FF2F5627FF190A0078AE66 /* serversock.hpp */,
 				64F07A8827FDF78A004E4D41 /* packet.cpp */,
 				64F07A8927FDF78A004E4D41 /* packet.hpp */,
 			);

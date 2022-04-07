@@ -20,6 +20,7 @@ add_library(network
 	STATIC
 		client.cpp
 		packet.cpp
+		serversock.cpp
 )
 
 

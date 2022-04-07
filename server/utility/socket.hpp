@@ -50,6 +50,8 @@ public:
 	socket_t(const socket_t&) = delete ;
 	auto operator=(const socket_t&)->socket_t&  = delete ;
 	
+	auto valid() const ->bool ;
+	
 	auto created() const ->std::chrono::time_point<std::chrono::system_clock>;
 	auto peer() const ->std::pair<ip4addr_t,int> ;
 	auto blocking() const ->bool ;
@@ -57,8 +59,8 @@ public:
 	auto write(const unsigned char *data,int amount)->int ;
 	auto read(unsigned char *data,int amount)->int ;
 	auto accept(bool peer_blocking = true) ->std::unique_ptr<socket_t> ;
-	auto connected() const ->const ip4addr_t& ;
-	auto connected() ->ip4addr_t& ;
+	//auto connected() const ->const ip4addr_t& ;
+	//auto connected() ->ip4addr_t& ;
 	static auto listen(const std::string &ip,const std::string &port,bool blocking = true )->std::unique_ptr<socket_t> ;
 	static auto connect(const std::string &ip,const std::string &port,bool blocking = true )->std::unique_ptr<socket_t> ;
 };
