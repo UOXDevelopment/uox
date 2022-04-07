@@ -154,6 +154,9 @@
     <ClCompile Include="server\network\packet.cpp">
       <Filter>server\network</Filter>
     </ClCompile>
+    <ClCompile Include="server\network\serversock.cpp">
+      <Filter>server\network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="server\clientobjects\baseobj.hpp">
@@ -274,6 +277,9 @@
       <Filter>server\network</Filter>
     </ClInclude>
     <ClInclude Include="server\network\packet.hpp">
+      <Filter>server\network</Filter>
+    </ClInclude>
+    <ClInclude Include="server\network\serversock.hpp">
       <Filter>server\network</Filter>
     </ClInclude>
   </ItemGroup>

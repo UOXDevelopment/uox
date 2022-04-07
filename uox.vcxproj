@@ -30,6 +30,7 @@
     <ClCompile Include="server\main.cpp" />
     <ClCompile Include="server\network\client.cpp" />
     <ClCompile Include="server\network\packet.cpp" />
+    <ClCompile Include="server\network\serversock.cpp" />
     <ClCompile Include="server\system\account.cpp" />
     <ClCompile Include="server\system\langmsg.cpp" />
     <ClCompile Include="server\system\region.cpp" />
@@ -72,6 +73,7 @@
     <ClInclude Include="server\io\logger.hpp" />
     <ClInclude Include="server\network\client.hpp" />
     <ClInclude Include="server\network\packet.hpp" />
+    <ClInclude Include="server\network\serversock.hpp" />
     <ClInclude Include="server\system\account.hpp" />
     <ClInclude Include="server\system\langmsg.hpp" />
     <ClInclude Include="server\system\region.hpp" />
