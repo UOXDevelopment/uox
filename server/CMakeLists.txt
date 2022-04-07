@@ -41,15 +41,18 @@ if(WIN32)
 		../support/zlib/win64/include
 endif()
 )
+
 if(WIN32)
 find_library(ZLIB_LIBRARY zlib REQUIRED 
 	HINTS "${CMAKE_PREFIX_PATH}../support/zlib/win64/lib"
 )
+#[[
 if ( ${ZLIB_LIBRARY} STREQUAL ZLIB_LIBRARY-NOTFOUND)
   message(FATAL_ERROR,"zlib found as ${ZLIB_LIBRARY}")
 else()
   message(STATUS,"zlib found as ${ZLIB_LIBRARY}")
 endif()
+]]
 
 target_link_libraries(uox PUBLIC
 	clientobjects
