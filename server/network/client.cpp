@@ -12,6 +12,10 @@
 using namespace std::string_literals;
 //=========================================================
 client_t::~client_t() {
+	if (player != nullptr){
+		player->client = nullptr ;
+	}
+	player = nullptr ;
 	auto attempt = 10 ;
 	while ((attempt>0) && socket->valid() && (outgoing.size()>0)){
 		

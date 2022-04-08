@@ -17,6 +17,10 @@ using actnum_t = int ;
 constexpr auto invalid_account = std::numeric_limits<int>::max() ;
 constexpr auto max_characters = 7 ;
 /* ********************************************************
+serverstatus_t
+****************************************************** */
+enum class serverstatus_t {shutdown, idle, run};
+/* ********************************************************
  priv_t
  ****************************************************** */
 enum class priv_t {player,seer,admin};

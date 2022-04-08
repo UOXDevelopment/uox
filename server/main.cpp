@@ -9,6 +9,11 @@
 #include <filesystem>
 #include <thread>
 #include <algorithm>
+#include <atomic>
+#include <queue>
+#include <mutex>
+
+
 
 #include "serverlocation.hpp"
 #include "secgroup.hpp"
@@ -18,11 +23,14 @@
 #include "netsupport.hpp"
 #include "account.hpp"
 #include "strutil.hpp"
-
+#include "serversock.hpp"
+#include "system_types.hpp"
+#include "console.hpp" 
 using namespace std::string_literals ;
 
 auto loadData(serverlocation &location, secgroup_t &configuration, secgroup_t &definition) ->bool ;
 
+auto serverloop(std::atomic<serverstatus_t> &server_state, serverloc_t &locations, secgroup_t &configuration, secgroup_t &definition, language_t &languages, serversock_t &server,tileinfo &info, universe_t &universe ) ->void ;
 
 int main(int argc, const char * argv[]) {
 	auto config_file  = "uox.cfg"s;
@@ -38,6 +46,8 @@ int main(int argc, const char * argv[]) {
 		std::cerr <<"Error initializing system network system: "<<e.what()<<std::endl;
 		return EXIT_FAILURE ;
 	}
+	std::atomic<serverstatus_t> server_state(serverstatus_t::idle) ;
+	
 	auto location = serverlocation() ;
 	auto configuration = secgroup_t() ;
 	auto definition = secgroup_t() ;
@@ -79,6 +89,11 @@ int main(int argc, const char * argv[]) {
 					account.set(location.userdata[userloc_t::access].string()) ;
 					std::cout <<account.size() <<" accounts."<<std::endl;
 					// Load network
+					auto server = serversock_t() ;
+					
+					// start server loop
+					
+					// loop console commands
 				}
 			}
 
@@ -156,4 +171,21 @@ auto loadData(serverlocation &location,secgroup_t &configuration, secgroup_t &de
 	}
 	return rvalue ;
 	
+}
+//=====================================================================
+auto serverloop(std::atomic<serverstatus_t> &server_state,serverloc_t &locations, secgroup_t &configuration, secgroup_t &definition, language_t &languages, serversock_t &server,tileinfo &info, universe_t &universe) ->void {
+	
+	while (server_state != serverstatus_t::shutdown){
+		// We will look for connections and in increment the clock
+		
+		// service all writes
+		
+		// service all reads
+		
+		// process all commands
+		
+		// clean up garbage
+		
+		
+	}
 }
